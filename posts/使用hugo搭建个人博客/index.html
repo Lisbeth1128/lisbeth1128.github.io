@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>使用Hugo搭建个人博客 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="使用Hugo搭建个人博客" />
+<meta property="og:description" content="今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。
+下载 Hugo 鉴于我使用的是 Mac，我就只讲 Mac 的操作了。 因为之间装了 Homebrew，所以我只需要使用brew install hugo 命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用hugo version命令，得到一个V开头的数字串就是安装成功了。
+搭建博客网站 这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤
+ hugo new xxxx xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 hugo new xxxx.github.io-creator，这里的```xxxx````就是你 github 的用户名了，比较方便。 使用一个主题 先cd 你刚才建的文件夹进入你刚才建的目录里，然后git init，然后使用官网给的示例主题git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke，可能会有点慢。最后，使用echo &#39;theme = &quot;ananke&quot;&#39; &gt;&gt; config.toml命令，将这个主题名字写入到配置文件中。 创建第一篇博客 搞定以上步骤之后，就可以创建我们的第一篇博客了，使用hugo new posts/xxxx.md命令，这里的xxxx就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置draft: true，将它改成false，意思就是可以发布让别人看到了。  预览网站 已经写完了博客，那接下来我们需要看一下它的效果。
+ 使用命令hugo server -D来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。 如果博客是用中文居多的话，我们还需要用编辑器打开config.toml，对其中的东西进行修改。将languageCode = &quot;en-us&quot;中得en-us改成zh-Hans。 没有什么问题的话，就可以生成第一篇博客了。使用hugo -D命令，就会在当前目录下生成一个public文件夹，第一篇博客里的东西都在里面。  上传到 GitHub 上 这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。
+ 为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+<meta property="article:published_time" content="2020-07-23T23:49:20+08:00" />
+<meta property="article:modified_time" content="2020-07-23T23:49:20+08:00" />
+<meta itemprop="name" content="使用Hugo搭建个人博客">
+<meta itemprop="description" content="今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。
+下载 Hugo 鉴于我使用的是 Mac，我就只讲 Mac 的操作了。 因为之间装了 Homebrew，所以我只需要使用brew install hugo 命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用hugo version命令，得到一个V开头的数字串就是安装成功了。
+搭建博客网站 这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤
+ hugo new xxxx xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 hugo new xxxx.github.io-creator，这里的```xxxx````就是你 github 的用户名了，比较方便。 使用一个主题 先cd 你刚才建的文件夹进入你刚才建的目录里，然后git init，然后使用官网给的示例主题git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke，可能会有点慢。最后，使用echo &#39;theme = &quot;ananke&quot;&#39; &gt;&gt; config.toml命令，将这个主题名字写入到配置文件中。 创建第一篇博客 搞定以上步骤之后，就可以创建我们的第一篇博客了，使用hugo new posts/xxxx.md命令，这里的xxxx就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置draft: true，将它改成false，意思就是可以发布让别人看到了。  预览网站 已经写完了博客，那接下来我们需要看一下它的效果。
+ 使用命令hugo server -D来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。 如果博客是用中文居多的话，我们还需要用编辑器打开config.toml，对其中的东西进行修改。将languageCode = &quot;en-us&quot;中得en-us改成zh-Hans。 没有什么问题的话，就可以生成第一篇博客了。使用hugo -D命令，就会在当前目录下生成一个public文件夹，第一篇博客里的东西都在里面。  上传到 GitHub 上 这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。
+ 为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个.">
+<meta itemprop="datePublished" content="2020-07-23T23:49:20&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-23T23:49:20&#43;08:00" />
+<meta itemprop="wordCount" content="82">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo搭建个人博客"/>
+<meta name="twitter:description" content="今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。
+下载 Hugo 鉴于我使用的是 Mac，我就只讲 Mac 的操作了。 因为之间装了 Homebrew，所以我只需要使用brew install hugo 命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用hugo version命令，得到一个V开头的数字串就是安装成功了。
+搭建博客网站 这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤
+ hugo new xxxx xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 hugo new xxxx.github.io-creator，这里的```xxxx````就是你 github 的用户名了，比较方便。 使用一个主题 先cd 你刚才建的文件夹进入你刚才建的目录里，然后git init，然后使用官网给的示例主题git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke，可能会有点慢。最后，使用echo &#39;theme = &quot;ananke&quot;&#39; &gt;&gt; config.toml命令，将这个主题名字写入到配置文件中。 创建第一篇博客 搞定以上步骤之后，就可以创建我们的第一篇博客了，使用hugo new posts/xxxx.md命令，这里的xxxx就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置draft: true，将它改成false，意思就是可以发布让别人看到了。  预览网站 已经写完了博客，那接下来我们需要看一下它的效果。
+ 使用命令hugo server -D来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。 如果博客是用中文居多的话，我们还需要用编辑器打开config.toml，对其中的东西进行修改。将languageCode = &quot;en-us&quot;中得en-us改成zh-Hans。 没有什么问题的话，就可以生成第一篇博客了。使用hugo -D命令，就会在当前目录下生成一个public文件夹，第一篇博客里的东西都在里面。  上传到 GitHub 上 这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。
+ 为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&amp;text=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&amp;title=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">使用Hugo搭建个人博客</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-07-23T23:49:20&#43;08:00">July 23, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。</p>
+<h2 id="下载-hugo">下载 Hugo</h2>
+<p>鉴于我使用的是 Mac，我就只讲 Mac 的操作了。
+因为之间装了 Homebrew，所以我只需要使用<code>brew install hugo </code>命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用<code>hugo version</code>命令，得到一个V开头的数字串就是安装成功了。</p>
+<h2 id="搭建博客网站">搭建博客网站</h2>
+<p>这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤</p>
+<ol>
+<li><code>hugo new xxxx</code>
+xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 <code>hugo new xxxx.github.io-creator</code>，这里的```xxxx````就是你 github 的用户名了，比较方便。</li>
+<li>使用一个主题
+先<code>cd 你刚才建的文件夹</code>进入你刚才建的目录里，然后<code>git init</code>，然后使用官网给的示例主题<code>git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke</code>，可能会有点慢。最后，使用<code>echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml</code>命令，将这个主题名字写入到配置文件中。</li>
+<li>创建第一篇博客
+搞定以上步骤之后，就可以创建我们的第一篇博客了，使用<code>hugo new posts/xxxx.md</code>命令，这里的<code>xxxx</code>就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置<code>draft: true</code>，将它改成<code>false</code>，意思就是可以发布让别人看到了。</li>
+</ol>
+<h2 id="预览网站">预览网站</h2>
+<p>已经写完了博客，那接下来我们需要看一下它的效果。</p>
+<ol>
+<li>使用命令<code>hugo server -D</code>来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。</li>
+<li>如果博客是用中文居多的话，我们还需要用编辑器打开<code>config.toml</code>，对其中的东西进行修改。将<code>languageCode = &quot;en-us&quot;</code>中得<code>en-us</code>改成<code>zh-Hans</code>。</li>
+<li>没有什么问题的话，就可以生成第一篇博客了。使用<code>hugo -D</code>命令，就会在当前目录下生成一个<code>public</code>文件夹，第一篇博客里的东西都在里面。</li>
+</ol>
+<h2 id="上传到-github-上">上传到 GitHub 上</h2>
+<p>这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。</p>
+<ol>
+<li>为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个.gitignore文件，然后在里面输入<code>/public/</code>，目的是让它上传到github得时候忽略掉public这个文件夹。</li>
+<li>进入public文件夹，重新生成一个项目。然后push到github上。</li>
+</ol>
+<h2 id="第二篇博客">第二篇博客</h2>
+<p>这样我们的第一篇博客就是完成了，那如果要写第二篇怎么办呢。</p>
+<ol>
+<li>在我们的<code> xxxx.github.io-creator</code>目录下，记得千万不要在你的public目录了，运行<code>hugo new posts/xxxx.md</code>。xxxx就是你的第二篇博客名字，然后你就可以进入文件写第二篇博客了。</li>
+<li>写完之后，使用命令<code>hugo -D</code> 生成了新的public目录。</li>
+<li>进入public目录，使用git命令将你的文件push到github上，稍等一下，就能在网站看到你的第二篇博客了。</li>
+</ol>
+<p>做完这些之后，我发现我的博客出现了一个BUG，首页没问题，但是我点击我的博客想看详细内容的时候，出现了奇怪的页面。</p>
+<ol>
+<li>找到之前的 <code>config.toml</code>文件，用编辑器打开它，将其中的<code>example.org</code>改成你的博客地址。</li>
+<li>然后重新上传到github上更新这个文件，稍等一会儿再打开网站，就正常了。</li>
+</ol>
+<p>这些大概就是今天学习的基本收获了，如果有问题以后会进行修改。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>HTML入门笔记1 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="HTML入门笔记1" />
+<meta property="og:description" content="今天学习了HTML简单的一些入门内容，现在写成博客整理一下。
+ HTML 是谁发明的 HTML 全称 HyperText Markup Language，超文本标记语言。是上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·博纳斯-李（Tim Berners-Lee），也就是我们所说的李爵士发明的。 HTML 的起手式 我用的是VSCode，打开VScode，然后创建一个HTML文件，右下角语言如果不是HTML可以改成HTML。然后输入一个!感叹号，再按Tab键，或者回车键，就会出现一大段代码。 这个就是起手式，每个HTML文件都需要有这么一些基本的设置。然后我们来稍微看看这些设置。  &lt;!DOCTYPE html&gt;文档类型 &lt;html lang=&quot;en&quot;&gt;这是html标签。可以把语言改成zh-CN，这样浏览器会知道这个界面主要用的是什么语言。 一般来说&lt;head&gt;和&lt;body&gt;标签不进行缩进 &lt;meta charset=&quot;UTF-8&quot;&gt; 文件的字符编码是utf-8，这个一般写在最前面，方便浏览器知道之后的文字用的是什么字符编码。 content=&quot;width=device-width 禁用缩放，兼容手机端。 content=&quot;ie=edge&quot; 告诉IE，使用的是最新的内核。   常用的章节标签 章节标签有很多，挑一些常用地简单说一下。  h1~h6：标题。h1字体最大，往后越来越小。 section：章节。表示用这个标签扩起来的是一个章节，章节可以嵌套章节。 p：段落。表示用这个标签括起来的是一个段落。 header：头部。可以放一些像导航之类的东西。 footer：脚部。版权声明一般放在这里，&amp;copy;这个就是版权符号©的写法。 main：主要内容。这个标签里包括的是主体内容，像导航、侧边栏，版权等的东西不能放在里面。 aside：旁支内容。这个标签里包括的是与主要内容无关的内容，比如侧边栏之类的东西，一般都放在这里。 div：划分。division，应该是这个词的简写。div可以嵌套div。   全局属性 全局属性就是所有标签都有的属性，有这些：  class：class属性可以让一组标签都有同样的属性。 contenteditable：是一个枚举属性，表示元素是否可以被用户编辑。 hidden：hidden是一个布尔属性，表示元素是否隐藏。 id：只有非常确定的唯一的属性用id，作为新手，能不用尽量不用。因为如果你两个元素用了同一个id，浏览器是不会报错的，你没有办法判断你是否只用在了一个元素上。 style：这是元素的属性，所以他的优先级高于css设置的样式，但是可以被javascript所写的属性覆盖。 tabindex：表示元素是否可以聚焦，并且在什么时候参与聚焦。当它是负数的时候，表示可以被聚焦，但是不能通过键盘访问到；当它是0的时候，表示可以被聚焦，并且可以通过键盘访问到。数值越小，越可以先被访问到。通常给予没有鼠标的用户设置这个属性。 title：标题。这个标签只用在&lt;head&gt;块里。表示文档的标题。   常用的内容标签  ol&#43;li：有序列表。 ul&#43;li：无序列表。 dl&#43;dd&#43;dt：表格。 pre：在这个标签里的内容会原封不动地输出到网页中，空格也会一模一样。 hr：水平分割线。 br：换行符。 a：超链接。当你要在一个网页里插入一个链接，就需要用到这个标签。 em：强调。通常显示是斜体，是一个语气上的强调。 strong：强调。通常显示是加粗，这个和em有所不同，他表示的是他扩起来的内容本身就很重要。    这只是刚刚入门了解的一些HTML的标签，还有很多很多东西还没有学习，以后会慢慢深入，初级阶段就先聊到这里。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" />
+<meta property="article:published_time" content="2020-07-28T03:26:22+08:00" />
+<meta property="article:modified_time" content="2020-07-28T03:26:22+08:00" />
+<meta itemprop="name" content="HTML入门笔记1">
+<meta itemprop="description" content="今天学习了HTML简单的一些入门内容，现在写成博客整理一下。
+ HTML 是谁发明的 HTML 全称 HyperText Markup Language，超文本标记语言。是上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·博纳斯-李（Tim Berners-Lee），也就是我们所说的李爵士发明的。 HTML 的起手式 我用的是VSCode，打开VScode，然后创建一个HTML文件，右下角语言如果不是HTML可以改成HTML。然后输入一个!感叹号，再按Tab键，或者回车键，就会出现一大段代码。 这个就是起手式，每个HTML文件都需要有这么一些基本的设置。然后我们来稍微看看这些设置。  &lt;!DOCTYPE html&gt;文档类型 &lt;html lang=&quot;en&quot;&gt;这是html标签。可以把语言改成zh-CN，这样浏览器会知道这个界面主要用的是什么语言。 一般来说&lt;head&gt;和&lt;body&gt;标签不进行缩进 &lt;meta charset=&quot;UTF-8&quot;&gt; 文件的字符编码是utf-8，这个一般写在最前面，方便浏览器知道之后的文字用的是什么字符编码。 content=&quot;width=device-width 禁用缩放，兼容手机端。 content=&quot;ie=edge&quot; 告诉IE，使用的是最新的内核。   常用的章节标签 章节标签有很多，挑一些常用地简单说一下。  h1~h6：标题。h1字体最大，往后越来越小。 section：章节。表示用这个标签扩起来的是一个章节，章节可以嵌套章节。 p：段落。表示用这个标签括起来的是一个段落。 header：头部。可以放一些像导航之类的东西。 footer：脚部。版权声明一般放在这里，&amp;copy;这个就是版权符号©的写法。 main：主要内容。这个标签里包括的是主体内容，像导航、侧边栏，版权等的东西不能放在里面。 aside：旁支内容。这个标签里包括的是与主要内容无关的内容，比如侧边栏之类的东西，一般都放在这里。 div：划分。division，应该是这个词的简写。div可以嵌套div。   全局属性 全局属性就是所有标签都有的属性，有这些：  class：class属性可以让一组标签都有同样的属性。 contenteditable：是一个枚举属性，表示元素是否可以被用户编辑。 hidden：hidden是一个布尔属性，表示元素是否隐藏。 id：只有非常确定的唯一的属性用id，作为新手，能不用尽量不用。因为如果你两个元素用了同一个id，浏览器是不会报错的，你没有办法判断你是否只用在了一个元素上。 style：这是元素的属性，所以他的优先级高于css设置的样式，但是可以被javascript所写的属性覆盖。 tabindex：表示元素是否可以聚焦，并且在什么时候参与聚焦。当它是负数的时候，表示可以被聚焦，但是不能通过键盘访问到；当它是0的时候，表示可以被聚焦，并且可以通过键盘访问到。数值越小，越可以先被访问到。通常给予没有鼠标的用户设置这个属性。 title：标题。这个标签只用在&lt;head&gt;块里。表示文档的标题。   常用的内容标签  ol&#43;li：有序列表。 ul&#43;li：无序列表。 dl&#43;dd&#43;dt：表格。 pre：在这个标签里的内容会原封不动地输出到网页中，空格也会一模一样。 hr：水平分割线。 br：换行符。 a：超链接。当你要在一个网页里插入一个链接，就需要用到这个标签。 em：强调。通常显示是斜体，是一个语气上的强调。 strong：强调。通常显示是加粗，这个和em有所不同，他表示的是他扩起来的内容本身就很重要。    这只是刚刚入门了解的一些HTML的标签，还有很多很多东西还没有学习，以后会慢慢深入，初级阶段就先聊到这里。">
+<meta itemprop="datePublished" content="2020-07-28T03:26:22&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-28T03:26:22&#43;08:00" />
+<meta itemprop="wordCount" content="55">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML入门笔记1"/>
+<meta name="twitter:description" content="今天学习了HTML简单的一些入门内容，现在写成博客整理一下。
+ HTML 是谁发明的 HTML 全称 HyperText Markup Language，超文本标记语言。是上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·博纳斯-李（Tim Berners-Lee），也就是我们所说的李爵士发明的。 HTML 的起手式 我用的是VSCode，打开VScode，然后创建一个HTML文件，右下角语言如果不是HTML可以改成HTML。然后输入一个!感叹号，再按Tab键，或者回车键，就会出现一大段代码。 这个就是起手式，每个HTML文件都需要有这么一些基本的设置。然后我们来稍微看看这些设置。  &lt;!DOCTYPE html&gt;文档类型 &lt;html lang=&quot;en&quot;&gt;这是html标签。可以把语言改成zh-CN，这样浏览器会知道这个界面主要用的是什么语言。 一般来说&lt;head&gt;和&lt;body&gt;标签不进行缩进 &lt;meta charset=&quot;UTF-8&quot;&gt; 文件的字符编码是utf-8，这个一般写在最前面，方便浏览器知道之后的文字用的是什么字符编码。 content=&quot;width=device-width 禁用缩放，兼容手机端。 content=&quot;ie=edge&quot; 告诉IE，使用的是最新的内核。   常用的章节标签 章节标签有很多，挑一些常用地简单说一下。  h1~h6：标题。h1字体最大，往后越来越小。 section：章节。表示用这个标签扩起来的是一个章节，章节可以嵌套章节。 p：段落。表示用这个标签括起来的是一个段落。 header：头部。可以放一些像导航之类的东西。 footer：脚部。版权声明一般放在这里，&amp;copy;这个就是版权符号©的写法。 main：主要内容。这个标签里包括的是主体内容，像导航、侧边栏，版权等的东西不能放在里面。 aside：旁支内容。这个标签里包括的是与主要内容无关的内容，比如侧边栏之类的东西，一般都放在这里。 div：划分。division，应该是这个词的简写。div可以嵌套div。   全局属性 全局属性就是所有标签都有的属性，有这些：  class：class属性可以让一组标签都有同样的属性。 contenteditable：是一个枚举属性，表示元素是否可以被用户编辑。 hidden：hidden是一个布尔属性，表示元素是否隐藏。 id：只有非常确定的唯一的属性用id，作为新手，能不用尽量不用。因为如果你两个元素用了同一个id，浏览器是不会报错的，你没有办法判断你是否只用在了一个元素上。 style：这是元素的属性，所以他的优先级高于css设置的样式，但是可以被javascript所写的属性覆盖。 tabindex：表示元素是否可以聚焦，并且在什么时候参与聚焦。当它是负数的时候，表示可以被聚焦，但是不能通过键盘访问到；当它是0的时候，表示可以被聚焦，并且可以通过键盘访问到。数值越小，越可以先被访问到。通常给予没有鼠标的用户设置这个属性。 title：标题。这个标签只用在&lt;head&gt;块里。表示文档的标题。   常用的内容标签  ol&#43;li：有序列表。 ul&#43;li：无序列表。 dl&#43;dd&#43;dt：表格。 pre：在这个标签里的内容会原封不动地输出到网页中，空格也会一模一样。 hr：水平分割线。 br：换行符。 a：超链接。当你要在一个网页里插入一个链接，就需要用到这个标签。 em：强调。通常显示是斜体，是一个语气上的强调。 strong：强调。通常显示是加粗，这个和em有所不同，他表示的是他扩起来的内容本身就很重要。    这只是刚刚入门了解的一些HTML的标签，还有很多很多东西还没有学习，以后会慢慢深入，初级阶段就先聊到这里。"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/&amp;text=HTML%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/&amp;title=HTML%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b01" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">HTML入门笔记1</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-07-28T03:26:22&#43;08:00">July 28, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>今天学习了HTML简单的一些入门内容，现在写成博客整理一下。</p>
+<ol>
+<li>HTML 是谁发明的
+HTML 全称 HyperText Markup Language，超文本标记语言。是上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·博纳斯-李（Tim Berners-Lee），也就是我们所说的李爵士发明的。</li>
+<li>HTML 的起手式
+我用的是VSCode，打开VScode，然后创建一个HTML文件，右下角语言如果不是HTML可以改成HTML。然后输入一个<code>!</code>感叹号，再按Tab键，或者回车键，就会出现一大段代码。
+这个就是起手式，每个HTML文件都需要有这么一些基本的设置。然后我们来稍微看看这些设置。
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code>文档类型</li>
+<li><code>&lt;html lang=&quot;en&quot;&gt;</code>这是html标签。可以把语言改成zh-CN，这样浏览器会知道这个界面主要用的是什么语言。</li>
+<li>一般来说<code>&lt;head&gt;</code>和<code>&lt;body&gt;</code>标签不进行缩进</li>
+<li><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> 文件的字符编码是<code>utf-8</code>，这个一般写在最前面，方便浏览器知道之后的文字用的是什么字符编码。</li>
+<li><code>content=&quot;width=device-width</code> 禁用缩放，兼容手机端。</li>
+<li><code>content=&quot;ie=edge&quot;</code> 告诉IE，使用的是最新的内核。</li>
+</ul>
+</li>
+<li>常用的章节标签
+章节标签有很多，挑一些常用地简单说一下。
+<ul>
+<li>h1~h6：标题。h1字体最大，往后越来越小。</li>
+<li>section：章节。表示用这个标签扩起来的是一个章节，章节可以嵌套章节。</li>
+<li>p：段落。表示用这个标签括起来的是一个段落。</li>
+<li>header：头部。可以放一些像导航之类的东西。</li>
+<li>footer：脚部。版权声明一般放在这里，<code>&amp;copy;</code>这个就是版权符号©的写法。</li>
+<li>main：主要内容。这个标签里包括的是主体内容，像导航、侧边栏，版权等的东西不能放在里面。</li>
+<li>aside：旁支内容。这个标签里包括的是与主要内容无关的内容，比如侧边栏之类的东西，一般都放在这里。</li>
+<li>div：划分。division，应该是这个词的简写。div可以嵌套div。</li>
+</ul>
+</li>
+<li>全局属性
+全局属性就是所有标签都有的属性，有这些：
+<ul>
+<li>class：class属性可以让一组标签都有同样的属性。</li>
+<li>contenteditable：是一个枚举属性，表示元素是否可以被用户编辑。</li>
+<li>hidden：hidden是一个布尔属性，表示元素是否隐藏。</li>
+<li>id：只有非常确定的唯一的属性用id，作为新手，能不用尽量不用。因为如果你两个元素用了同一个id，浏览器是不会报错的，你没有办法判断你是否只用在了一个元素上。</li>
+<li>style：这是元素的属性，所以他的优先级高于css设置的样式，但是可以被javascript所写的属性覆盖。</li>
+<li>tabindex：表示元素是否可以聚焦，并且在什么时候参与聚焦。当它是负数的时候，表示可以被聚焦，但是不能通过键盘访问到；当它是0的时候，表示可以被聚焦，并且可以通过键盘访问到。数值越小，越可以先被访问到。通常给予没有鼠标的用户设置这个属性。</li>
+<li>title：标题。这个标签只用在<code>&lt;head&gt;</code>块里。表示文档的标题。</li>
+</ul>
+</li>
+<li>常用的内容标签
+<ul>
+<li>ol+li：有序列表。</li>
+<li>ul+li：无序列表。</li>
+<li>dl+dd+dt：表格。</li>
+<li>pre：在这个标签里的内容会原封不动地输出到网页中，空格也会一模一样。</li>
+<li>hr：水平分割线。</li>
+<li>br：换行符。</li>
+<li>a：超链接。当你要在一个网页里插入一个链接，就需要用到这个标签。</li>
+<li>em：强调。通常显示是斜体，是一个语气上的强调。</li>
+<li>strong：强调。通常显示是加粗，这个和<code>em</code>有所不同，他表示的是他扩起来的内容本身就很重要。</li>
+</ul>
+</li>
+</ol>
+<p>这只是刚刚入门了解的一些HTML的标签，还有很多很多东西还没有学习，以后会慢慢深入，初级阶段就先聊到这里。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

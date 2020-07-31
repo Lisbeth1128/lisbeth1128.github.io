@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>HTML常用标签 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="HTML常用标签" />
+<meta property="og:description" content="今天学习了HTML的几个比较常用，也比较繁琐的标签，现在在这里进行一个总结，以复习巩固知识。
+a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的其他位置、电子邮件地址或者其他任意URL的超链接。 属性   href 属性，它的取值有以下几种
+ 网址：  https://google.com 这个是https协议 http://google.com 这个是http协议 //google.com 这个是无协议网址，它会自动选择是用https还是http协议，所以我们推荐用这种写法   路径：  /a/b/c（绝对路径）和 a/b/c（相对路径）。这里有些不一样的地方，因为http-server在哪里打开，它就会把哪里作为根目录。而如果我们是使用双击去打开这个html文件，那是文件路径，在点超链接的时候，我们会根据文件路径的做法找到文件的根目录去，这样就会出错。所以我们要用http-server来进行模拟测试，而不是用双击打开文件的方式去测试html文件。 index.html 和 ./index.html。这是在当前目录下寻找这个文件，两个意思是一样的。   伪协议：  javascript:代码; 这里的代码为空的话，就是一个点击之后不会有任何反应的按钮，用其他任何办法都不能达到同样的效果。 mailto: 邮件地址 写邮件给邮件地址主人 tel:手机号 打电话给这个手机号   id  href=&rdquo;#id&rdquo; 可以定位到页面中这个id的位置      target 属性，是指在哪个窗口打开这个超链接。它的取值分为以下两种：
+   内置名字  _blank：在新标签页打开。 _top：在最顶层页面打开。 _parent：在父级页面打开。 _self：默认值，在当前页面打开。   程序员命名  window的name  target=&quot;xxx&rdquo;，如果有xxx这个窗口，就在xxx窗口打开；如果没有，就创建xxx窗口，然后打开。   iframe的name  如果iframe设置了name属性，那么target设置成这个name，就可以在这个iframe里打开窗口了。        以上就是a标签的基本用法了，还有一些就是不怎么常见了，如果碰到可以查MDN。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
+<meta property="article:published_time" content="2020-07-31T19:57:36+08:00" />
+<meta property="article:modified_time" content="2020-07-31T19:57:36+08:00" />
+<meta itemprop="name" content="HTML常用标签">
+<meta itemprop="description" content="今天学习了HTML的几个比较常用，也比较繁琐的标签，现在在这里进行一个总结，以复习巩固知识。
+a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的其他位置、电子邮件地址或者其他任意URL的超链接。 属性   href 属性，它的取值有以下几种
+ 网址：  https://google.com 这个是https协议 http://google.com 这个是http协议 //google.com 这个是无协议网址，它会自动选择是用https还是http协议，所以我们推荐用这种写法   路径：  /a/b/c（绝对路径）和 a/b/c（相对路径）。这里有些不一样的地方，因为http-server在哪里打开，它就会把哪里作为根目录。而如果我们是使用双击去打开这个html文件，那是文件路径，在点超链接的时候，我们会根据文件路径的做法找到文件的根目录去，这样就会出错。所以我们要用http-server来进行模拟测试，而不是用双击打开文件的方式去测试html文件。 index.html 和 ./index.html。这是在当前目录下寻找这个文件，两个意思是一样的。   伪协议：  javascript:代码; 这里的代码为空的话，就是一个点击之后不会有任何反应的按钮，用其他任何办法都不能达到同样的效果。 mailto: 邮件地址 写邮件给邮件地址主人 tel:手机号 打电话给这个手机号   id  href=&rdquo;#id&rdquo; 可以定位到页面中这个id的位置      target 属性，是指在哪个窗口打开这个超链接。它的取值分为以下两种：
+   内置名字  _blank：在新标签页打开。 _top：在最顶层页面打开。 _parent：在父级页面打开。 _self：默认值，在当前页面打开。   程序员命名  window的name  target=&quot;xxx&rdquo;，如果有xxx这个窗口，就在xxx窗口打开；如果没有，就创建xxx窗口，然后打开。   iframe的name  如果iframe设置了name属性，那么target设置成这个name，就可以在这个iframe里打开窗口了。        以上就是a标签的基本用法了，还有一些就是不怎么常见了，如果碰到可以查MDN。">
+<meta itemprop="datePublished" content="2020-07-31T19:57:36&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-31T19:57:36&#43;08:00" />
+<meta itemprop="wordCount" content="79">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML常用标签"/>
+<meta name="twitter:description" content="今天学习了HTML的几个比较常用，也比较繁琐的标签，现在在这里进行一个总结，以复习巩固知识。
+a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的其他位置、电子邮件地址或者其他任意URL的超链接。 属性   href 属性，它的取值有以下几种
+ 网址：  https://google.com 这个是https协议 http://google.com 这个是http协议 //google.com 这个是无协议网址，它会自动选择是用https还是http协议，所以我们推荐用这种写法   路径：  /a/b/c（绝对路径）和 a/b/c（相对路径）。这里有些不一样的地方，因为http-server在哪里打开，它就会把哪里作为根目录。而如果我们是使用双击去打开这个html文件，那是文件路径，在点超链接的时候，我们会根据文件路径的做法找到文件的根目录去，这样就会出错。所以我们要用http-server来进行模拟测试，而不是用双击打开文件的方式去测试html文件。 index.html 和 ./index.html。这是在当前目录下寻找这个文件，两个意思是一样的。   伪协议：  javascript:代码; 这里的代码为空的话，就是一个点击之后不会有任何反应的按钮，用其他任何办法都不能达到同样的效果。 mailto: 邮件地址 写邮件给邮件地址主人 tel:手机号 打电话给这个手机号   id  href=&rdquo;#id&rdquo; 可以定位到页面中这个id的位置      target 属性，是指在哪个窗口打开这个超链接。它的取值分为以下两种：
+   内置名字  _blank：在新标签页打开。 _top：在最顶层页面打开。 _parent：在父级页面打开。 _self：默认值，在当前页面打开。   程序员命名  window的name  target=&quot;xxx&rdquo;，如果有xxx这个窗口，就在xxx窗口打开；如果没有，就创建xxx窗口，然后打开。   iframe的name  如果iframe设置了name属性，那么target设置成这个name，就可以在这个iframe里打开窗口了。        以上就是a标签的基本用法了，还有一些就是不怎么常见了，如果碰到可以查MDN。"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/&amp;text=HTML%e5%b8%b8%e7%94%a8%e6%a0%87%e7%ad%be" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/&amp;title=HTML%e5%b8%b8%e7%94%a8%e6%a0%87%e7%ad%be" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">HTML常用标签</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-07-31T19:57:36&#43;08:00">July 31, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>今天学习了HTML的几个比较常用，也比较繁琐的标签，现在在这里进行一个总结，以复习巩固知识。</p>
+<h4 id="a-标签">a 标签</h4>
+<ol>
+<li>定义
+a 标签是创建通向其他网页、文件、同一页面的其他位置、电子邮件地址或者其他任意URL的超链接。</li>
+<li>属性
+<ul>
+<li>
+<p>href 属性，它的取值有以下几种</p>
+<ul>
+<li>网址：
+<ul>
+<li><a href="https://google.com">https://google.com</a> 这个是https协议</li>
+<li><a href="http://google.com">http://google.com</a> 这个是http协议</li>
+<li>//google.com 这个是无协议网址，它会自动选择是用https还是http协议，所以我们推荐用这种写法</li>
+</ul>
+</li>
+<li>路径：
+<ul>
+<li>/a/b/c（绝对路径）和 a/b/c（相对路径）。这里有些不一样的地方，因为http-server在哪里打开，它就会把哪里作为根目录。而如果我们是使用双击去打开这个html文件，那是文件路径，在点超链接的时候，我们会根据文件路径的做法找到文件的根目录去，这样就会出错。所以我们要用http-server来进行模拟测试，而不是用双击打开文件的方式去测试html文件。</li>
+<li>index.html 和 ./index.html。这是在当前目录下寻找这个文件，两个意思是一样的。</li>
+</ul>
+</li>
+<li>伪协议：
+<ul>
+<li>javascript:代码;  这里的代码为空的话，就是一个点击之后不会有任何反应的按钮，用其他任何办法都不能达到同样的效果。</li>
+<li>mailto: 邮件地址   写邮件给邮件地址主人</li>
+<li>tel:手机号  打电话给这个手机号</li>
+</ul>
+</li>
+<li>id
+<ul>
+<li>href=&rdquo;#id&rdquo; 可以定位到页面中这个id的位置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>target 属性，是指在哪个窗口打开这个超链接。它的取值分为以下两种：</p>
+</li>
+</ul>
+<ul>
+<li>内置名字
+<ul>
+<li>_blank：在新标签页打开。</li>
+<li>_top：在最顶层页面打开。</li>
+<li>_parent：在父级页面打开。</li>
+<li>_self：默认值，在当前页面打开。</li>
+</ul>
+</li>
+<li>程序员命名
+<ul>
+<li>window的name
+<ul>
+<li>target=&quot;xxx&rdquo;，如果有xxx这个窗口，就在xxx窗口打开；如果没有，就创建xxx窗口，然后打开。</li>
+</ul>
+</li>
+<li>iframe的name
+<ul>
+<li>如果iframe设置了name属性，那么target设置成这个name，就可以在这个iframe里打开窗口了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>以上就是a标签的基本用法了，还有一些就是不怎么常见了，如果碰到可以查MDN。</p>
+<h4 id="img-标签">img 标签</h4>
+<ol>
+<li>定义：img标签是将图片嵌入文档的标签。</li>
+<li>作用：发出GET请求，展示一张图片。</li>
+<li>属性：
+<ul>
+<li>src：是必有的属性。是图片的来源地址，可以是网址，也可以是路径。</li>
+<li>alt：alternative的意思。就是如果这个图因为意外原因不能加载，那么浏览器会显示alt中设置的备用文本。</li>
+<li>height：图片的高度。如果只设置高度，那么宽度会自适应。</li>
+<li>width：图片的宽度。如果只设置宽度，那么高度会自适应。
+前端要记住一点，千万不能让图片变形。</li>
+</ul>
+</li>
+<li>事件：
+<ul>
+<li>onload</li>
+<li>onerror：可以使用这个事件，当src出问题的时候，可以将路径设置成其他备用路径。</li>
+</ul>
+</li>
+</ol>
+<h4 id="table-标签">table 标签</h4>
+<ol>
+<li>table 标签的直系子标签只能有三个：thead、tbody、tfoot。</li>
+<li>每个标签里都有tr（table row），表示一行</li>
+<li>thead的tr标签里有th（表头）</li>
+<li>tbody的tr标签里有th（在有两个表头的时候）和td（table data）</li>
+<li>如果没有写tbody、thead的话，浏览器会把你写的tr都放在tbody里面；如果你只写了td，那浏览器会把你的td放在tr里，然后tr放在tbody里。</li>
+<li>thead、tbody、tfoot在写的时候可以不按顺序，浏览器会照常展示。</li>
+<li>相关的样式
+<ul>
+<li>table-layout：
+<ul>
+<li>auto 自动根据内容计算行列宽度自行调整</li>
+<li>fixed 是根据表格的宽度进行调整的</li>
+</ul>
+</li>
+<li>border-collapse：取值collapse，合并表格边框</li>
+<li>border-spacing：表格之间的空隙</li>
+</ul>
+</li>
+</ol>
+<p>还有其他很多的标签，如果要详细地知道标签的整个内容，需要查询MDN，这是最详细最清楚的资料。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 28 Jul 2020 03:26:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 19:57:36 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML常用标签</title>
+      <link>http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Fri, 31 Jul 2020 19:57:36 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>今天学习了HTML的几个比较常用，也比较繁琐的标签，现在在这里进行一个总结，以复习巩固知识。
+a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的其他位置、电子邮件地址或者其他任意URL的超链接。 属性   href 属性，它的取值有以下几种
+ 网址：  https://google.com 这个是https协议 http://google.com 这个是http协议 //google.com 这个是无协议网址，它会自动选择是用https还是http协议，所以我们推荐用这种写法   路径：  /a/b/c（绝对路径）和 a/b/c（相对路径）。这里有些不一样的地方，因为http-server在哪里打开，它就会把哪里作为根目录。而如果我们是使用双击去打开这个html文件，那是文件路径，在点超链接的时候，我们会根据文件路径的做法找到文件的根目录去，这样就会出错。所以我们要用http-server来进行模拟测试，而不是用双击打开文件的方式去测试html文件。 index.html 和 ./index.html。这是在当前目录下寻找这个文件，两个意思是一样的。   伪协议：  javascript:代码; 这里的代码为空的话，就是一个点击之后不会有任何反应的按钮，用其他任何办法都不能达到同样的效果。 mailto: 邮件地址 写邮件给邮件地址主人 tel:手机号 打电话给这个手机号   id  href=&amp;rdquo;#id&amp;rdquo; 可以定位到页面中这个id的位置      target 属性，是指在哪个窗口打开这个超链接。它的取值分为以下两种：
+   内置名字  _blank：在新标签页打开。 _top：在最顶层页面打开。 _parent：在父级页面打开。 _self：默认值，在当前页面打开。   程序员命名  window的name  target=&amp;quot;xxx&amp;rdquo;，如果有xxx这个窗口，就在xxx窗口打开；如果没有，就创建xxx窗口，然后打开。   iframe的name  如果iframe设置了name属性，那么target设置成这个name，就可以在这个iframe里打开窗口了。        以上就是a标签的基本用法了，还有一些就是不怎么常见了，如果碰到可以查MDN。</description>
+    </item>
     
     <item>
       <title>HTML入门笔记1</title>

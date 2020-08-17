@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2020-07-31T19:57:36+08:00" />
+<meta property="og:updated_time" content="2020-08-17T15:49:18+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,32 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
+            CSS知识总结
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。
+CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。 层叠的意思。  样式层叠：可以同时对同一选择器做样式声明。 选择器层叠：可以用不同的选择器对同一个元素做样式声明。 文件层叠：可以使用多个CSS文件对同一HTML文件做声明。   CSS 版本 目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。  文档流  英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。 流动方向。  inline： 元素从左到右，到达最右才会换行。 block：元素从上到下，每一个都另起一行。 inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。    盒模型  content-box：内容盒。content-box的宽度就是内容的宽度。 border-box：边框盒。border-box的宽度是内容的宽度+padding的宽度+border的宽度。  CSS 布局 CSS 目前用的大概是三种布局。
+ Float 布局。  子元素上加 float:left; 和 width 父元素上加 .clearfix  .clearfix::after{ content:''; display: block; clear: both; }  Flex 布局  父元素container的样式  让一个元素变成Flex容器 display: flex | inline-flex; 改变items的流动方向（主轴） flex-direction: row | row-reverse | column | column-reverse; 改变折行 flex-wrap: nowrap | wrap | wrap-reverse; 主轴对齐方式（默认是横轴） justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 次轴对齐方式（默认是纵轴） align-items: stretch | flex-start | flex-end | center | baseline 多行内容 align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around   子元素items的属性  item 上面加上 order item 上面加上 flex-grow 控制自己长胖 item 上面加上 flex-shrink 控制自己变瘦   Flex 的属性还有很多，用到的时候可以去查询 MDN。   Grid 布局  Grid 也分 container 和 items 成为 container display: grid | inline-grid; 行和列 grid-template-columns: 40px 50px auto 50px 40px; grid-template-raws: 25% 100px auto;      Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。  CSS 定位 布局是屏幕平面的，定位是垂直于屏幕的。
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="color-inherit dim link">
             HTML常用标签
             </a>
@@ -171,41 +197,18 @@ a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="color-inherit dim link">
-            使用Hugo搭建个人博客
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。
-下载 Hugo 鉴于我使用的是 Mac，我就只讲 Mac 的操作了。 因为之间装了 Homebrew，所以我只需要使用brew install hugo 命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用hugo version命令，得到一个V开头的数字串就是安装成功了。
-搭建博客网站 这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤
- hugo new xxxx xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 hugo new xxxx.github.io-creator，这里的```xxxx````就是你 github 的用户名了，比较方便。 使用一个主题 先cd 你刚才建的文件夹进入你刚才建的目录里，然后git init，然后使用官网给的示例主题git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke，可能会有点慢。最后，使用echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml命令，将这个主题名字写入到配置文件中。 创建第一篇博客 搞定以上步骤之后，就可以创建我们的第一篇博客了，使用hugo new posts/xxxx.md命令，这里的xxxx就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置draft: true，将它改成false，意思就是可以发布让别人看到了。  预览网站 已经写完了博客，那接下来我们需要看一下它的效果。
- 使用命令hugo server -D来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。 如果博客是用中文居多的话，我们还需要用编辑器打开config.toml，对其中的东西进行修改。将languageCode = &quot;en-us&quot;中得en-us改成zh-Hans。 没有什么问题的话，就可以生成第一篇博客了。使用hugo -D命令，就会在当前目录下生成一个public文件夹，第一篇博客里的东西都在里面。  上传到 GitHub 上 这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。
- 为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个.
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
+              使用Hugo搭建个人博客
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="link black dim">

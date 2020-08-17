@@ -6,10 +6,21 @@
     <description>Recent content on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 31 Jul 2020 19:57:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 15:49:18 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS知识总结</title>
+      <link>http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 17 Aug 2020 15:49:18 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。
+CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。 层叠的意思。  样式层叠：可以同时对同一选择器做样式声明。 选择器层叠：可以用不同的选择器对同一个元素做样式声明。 文件层叠：可以使用多个CSS文件对同一HTML文件做声明。   CSS 版本 目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。  文档流  英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。 流动方向。  inline： 元素从左到右，到达最右才会换行。 block：元素从上到下，每一个都另起一行。 inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。    盒模型  content-box：内容盒。content-box的宽度就是内容的宽度。 border-box：边框盒。border-box的宽度是内容的宽度+padding的宽度+border的宽度。  CSS 布局 CSS 目前用的大概是三种布局。
+ Float 布局。  子元素上加 float:left; 和 width 父元素上加 .clearfix  .clearfix::after{ content:&#39;&#39;; display: block; clear: both; }  Flex 布局  父元素container的样式  让一个元素变成Flex容器 display: flex | inline-flex; 改变items的流动方向（主轴） flex-direction: row | row-reverse | column | column-reverse; 改变折行 flex-wrap: nowrap | wrap | wrap-reverse; 主轴对齐方式（默认是横轴） justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 次轴对齐方式（默认是纵轴） align-items: stretch | flex-start | flex-end | center | baseline 多行内容 align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around   子元素items的属性  item 上面加上 order item 上面加上 flex-grow 控制自己长胖 item 上面加上 flex-shrink 控制自己变瘦   Flex 的属性还有很多，用到的时候可以去查询 MDN。   Grid 布局  Grid 也分 container 和 items 成为 container display: grid | inline-grid; 行和列 grid-template-columns: 40px 50px auto 50px 40px; grid-template-raws: 25% 100px auto;      Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。  CSS 定位 布局是屏幕平面的，定位是垂直于屏幕的。</description>
+    </item>
     
     <item>
       <title>HTML常用标签</title>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>CSS知识总结 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="CSS知识总结" />
+<meta property="og:description" content="最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。
+CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。 层叠的意思。  样式层叠：可以同时对同一选择器做样式声明。 选择器层叠：可以用不同的选择器对同一个元素做样式声明。 文件层叠：可以使用多个CSS文件对同一HTML文件做声明。   CSS 版本 目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。  文档流  英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。 流动方向。  inline： 元素从左到右，到达最右才会换行。 block：元素从上到下，每一个都另起一行。 inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。    盒模型  content-box：内容盒。content-box的宽度就是内容的宽度。 border-box：边框盒。border-box的宽度是内容的宽度&#43;padding的宽度&#43;border的宽度。  CSS 布局 CSS 目前用的大概是三种布局。
+ Float 布局。  子元素上加 float:left; 和 width 父元素上加 .clearfix  .clearfix::after{ content:&#39;&#39;; display: block; clear: both; }  Flex 布局  父元素container的样式  让一个元素变成Flex容器 display: flex | inline-flex; 改变items的流动方向（主轴） flex-direction: row | row-reverse | column | column-reverse; 改变折行 flex-wrap: nowrap | wrap | wrap-reverse; 主轴对齐方式（默认是横轴） justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 次轴对齐方式（默认是纵轴） align-items: stretch | flex-start | flex-end | center | baseline 多行内容 align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around   子元素items的属性  item 上面加上 order item 上面加上 flex-grow 控制自己长胖 item 上面加上 flex-shrink 控制自己变瘦   Flex 的属性还有很多，用到的时候可以去查询 MDN。   Grid 布局  Grid 也分 container 和 items 成为 container display: grid | inline-grid; 行和列 grid-template-columns: 40px 50px auto 50px 40px; grid-template-raws: 25% 100px auto;      Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。  CSS 定位 布局是屏幕平面的，定位是垂直于屏幕的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2020-08-17T15:49:18+08:00" />
+<meta property="article:modified_time" content="2020-08-17T15:49:18+08:00" />
+<meta itemprop="name" content="CSS知识总结">
+<meta itemprop="description" content="最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。
+CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。 层叠的意思。  样式层叠：可以同时对同一选择器做样式声明。 选择器层叠：可以用不同的选择器对同一个元素做样式声明。 文件层叠：可以使用多个CSS文件对同一HTML文件做声明。   CSS 版本 目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。  文档流  英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。 流动方向。  inline： 元素从左到右，到达最右才会换行。 block：元素从上到下，每一个都另起一行。 inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。    盒模型  content-box：内容盒。content-box的宽度就是内容的宽度。 border-box：边框盒。border-box的宽度是内容的宽度&#43;padding的宽度&#43;border的宽度。  CSS 布局 CSS 目前用的大概是三种布局。
+ Float 布局。  子元素上加 float:left; 和 width 父元素上加 .clearfix  .clearfix::after{ content:&#39;&#39;; display: block; clear: both; }  Flex 布局  父元素container的样式  让一个元素变成Flex容器 display: flex | inline-flex; 改变items的流动方向（主轴） flex-direction: row | row-reverse | column | column-reverse; 改变折行 flex-wrap: nowrap | wrap | wrap-reverse; 主轴对齐方式（默认是横轴） justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 次轴对齐方式（默认是纵轴） align-items: stretch | flex-start | flex-end | center | baseline 多行内容 align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around   子元素items的属性  item 上面加上 order item 上面加上 flex-grow 控制自己长胖 item 上面加上 flex-shrink 控制自己变瘦   Flex 的属性还有很多，用到的时候可以去查询 MDN。   Grid 布局  Grid 也分 container 和 items 成为 container display: grid | inline-grid; 行和列 grid-template-columns: 40px 50px auto 50px 40px; grid-template-raws: 25% 100px auto;      Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。  CSS 定位 布局是屏幕平面的，定位是垂直于屏幕的。">
+<meta itemprop="datePublished" content="2020-08-17T15:49:18&#43;08:00" />
+<meta itemprop="dateModified" content="2020-08-17T15:49:18&#43;08:00" />
+<meta itemprop="wordCount" content="291">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS知识总结"/>
+<meta name="twitter:description" content="最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。
+CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。 层叠的意思。  样式层叠：可以同时对同一选择器做样式声明。 选择器层叠：可以用不同的选择器对同一个元素做样式声明。 文件层叠：可以使用多个CSS文件对同一HTML文件做声明。   CSS 版本 目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。  文档流  英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。 流动方向。  inline： 元素从左到右，到达最右才会换行。 block：元素从上到下，每一个都另起一行。 inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。    盒模型  content-box：内容盒。content-box的宽度就是内容的宽度。 border-box：边框盒。border-box的宽度是内容的宽度&#43;padding的宽度&#43;border的宽度。  CSS 布局 CSS 目前用的大概是三种布局。
+ Float 布局。  子元素上加 float:left; 和 width 父元素上加 .clearfix  .clearfix::after{ content:&#39;&#39;; display: block; clear: both; }  Flex 布局  父元素container的样式  让一个元素变成Flex容器 display: flex | inline-flex; 改变items的流动方向（主轴） flex-direction: row | row-reverse | column | column-reverse; 改变折行 flex-wrap: nowrap | wrap | wrap-reverse; 主轴对齐方式（默认是横轴） justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 次轴对齐方式（默认是纵轴） align-items: stretch | flex-start | flex-end | center | baseline 多行内容 align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around   子元素items的属性  item 上面加上 order item 上面加上 flex-grow 控制自己长胖 item 上面加上 flex-shrink 控制自己变瘦   Flex 的属性还有很多，用到的时候可以去查询 MDN。   Grid 布局  Grid 也分 container 和 items 成为 container display: grid | inline-grid; 行和列 grid-template-columns: 40px 50px auto 50px 40px; grid-template-raws: 25% 100px auto;      Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。  CSS 定位 布局是屏幕平面的，定位是垂直于屏幕的。"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/&amp;text=CSS%e7%9f%a5%e8%af%86%e6%80%bb%e7%bb%93" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/&amp;title=CSS%e7%9f%a5%e8%af%86%e6%80%bb%e7%bb%93" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">CSS知识总结</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-08-17T15:49:18&#43;08:00">August 17, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。</p>
+<h3 id="css-的历史">CSS 的历史</h3>
+<ol>
+<li>CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。</li>
+<li>层叠的意思。
+<ul>
+<li>样式层叠：可以同时对同一选择器做样式声明。</li>
+<li>选择器层叠：可以用不同的选择器对同一个元素做样式声明。</li>
+<li>文件层叠：可以使用多个CSS文件对同一HTML文件做声明。</li>
+</ul>
+</li>
+<li>CSS 版本
+目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。</li>
+</ol>
+<h3 id="文档流">文档流</h3>
+<ol>
+<li>英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。</li>
+<li>流动方向。
+<ul>
+<li>inline： 元素从左到右，到达最右才会换行。</li>
+<li>block：元素从上到下，每一个都另起一行。</li>
+<li>inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。</li>
+</ul>
+</li>
+</ol>
+<h3 id="盒模型">盒模型</h3>
+<ol>
+<li>content-box：内容盒。content-box的宽度就是内容的宽度。</li>
+<li>border-box：边框盒。border-box的宽度是内容的宽度+padding的宽度+border的宽度。</li>
+</ol>
+<h3 id="css-布局">CSS 布局</h3>
+<p>CSS 目前用的大概是三种布局。</p>
+<ol>
+<li>Float 布局。
+<ul>
+<li>子元素上加 float:left; 和 width</li>
+<li>父元素上加 .clearfix</li>
+</ul>
+<pre><code>.clearfix::after{
+      content:'';
+      display: block;
+      clear: both;
+}
+</code></pre></li>
+<li>Flex 布局
+<ul>
+<li>父元素<code>container</code>的样式
+<ul>
+<li>让一个元素变成<code>Flex</code>容器
+<code>display: flex | inline-flex;</code></li>
+<li>改变<code>items</code>的流动方向（主轴）
+<code>flex-direction: row | row-reverse | column | column-reverse;</code></li>
+<li>改变折行
+<code>flex-wrap: nowrap | wrap | wrap-reverse;</code></li>
+<li>主轴对齐方式（默认是横轴）
+<code>justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly</code></li>
+<li>次轴对齐方式（默认是纵轴）
+<code>align-items: stretch | flex-start | flex-end | center | baseline</code></li>
+<li>多行内容
+<code>align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around</code></li>
+</ul>
+</li>
+<li>子元素<code>items</code>的属性
+<ul>
+<li><code>item</code> 上面加上 <code>order</code></li>
+<li><code>item</code> 上面加上 <code>flex-grow</code> 控制自己长胖</li>
+<li><code>item</code> 上面加上 <code>flex-shrink</code> 控制自己变瘦</li>
+</ul>
+</li>
+<li>Flex 的属性还有很多，用到的时候可以去查询 MDN。</li>
+</ul>
+</li>
+<li>Grid 布局
+<ul>
+<li><code>Grid</code> 也分 <code>container</code> 和 <code>items</code></li>
+<li>成为 container
+<code>display: grid | inline-grid;</code></li>
+<li>行和列
+<pre><code>grid-template-columns: 40px 50px auto 50px 40px;
+grid-template-raws: 25% 100px auto;
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。</li>
+</ul>
+<h3 id="css-定位">CSS 定位</h3>
+<p>布局是屏幕平面的，定位是垂直于屏幕的。</p>
+<ol>
+<li>div 的分层
+<ul>
+<li>最底层：background</li>
+<li>border</li>
+<li>块级子元素</li>
+<li>浮动元素</li>
+<li>内联子元素</li>
+</ul>
+</li>
+<li>position 属性
+<ul>
+<li>static：默认值，是指这个元素待在文档流里。</li>
+<li>relative：相对定位。元素升起来，但是不脱离文档流。意思就是你占的位置是不变的，只是看起来不在原来的位置。</li>
+<li>absolute：绝对定位。定位基准是最近的那个定位不是static的父元素。</li>
+<li>fixed：固定定位。定位基准是viewport，但是这个定位有问题，手机上尽量不要使用。</li>
+<li>sticky：粘滞定位。可以用来做导航，但是兼容性很差，用的少。</li>
+</ul>
+</li>
+</ol>
+<h3 id="css-动画">CSS 动画</h3>
+<ol>
+<li>动画的原理
+动画就是一幅幅静止的图片以一定的速度连续播放时，肉眼因为有视觉残像就会误以为画面在动。</li>
+<li>浏览器渲染过程
+<ul>
+<li>根据 HTML 文件构建一棵 HTML 树。</li>
+<li>根据 CSS 文件构建一棵 CSS 树。</li>
+<li>然后将两棵树合并成一棵渲染树（render tree）。</li>
+<li>Layout 布局（文档流、盒模型、计算元素的大小和位置）。</li>
+<li>Paint 绘制（边框颜色、文字颜色、其他颜色）。</li>
+<li>Composite 合成</li>
+</ul>
+</li>
+<li>动画有两种做法
+<ul>
+<li>用 transform 过渡
+<ul>
+<li>transition: 属性名 时长 过渡方式 延迟</li>
+<li>可以用 all 代替所有属性。</li>
+<li>过渡方式有很多，常用的有 linear、ease系列，具体什么含义可以参考 MDN 教程。</li>
+</ul>
+</li>
+<li>用 animation
+<ul>
+<li>animation: 时长 | 过渡方式 | 延迟 | 次数 | 方向 | 填充模式 | 是否暂停 | 动画名</li>
+<li>时长: 1s或者1000ms</li>
+<li>过渡方式：跟transition取值一样，如linear</li>
+<li>次数：3或者2.4或者infinite，infinite可以让它一直动</li>
+<li>方向：reverse | alternate | alternate-reverse</li>
+<li>填充模式：none | forwards | backwards | both</li>
+<li>是否暂停：paused|running</li>
+<li>keyframes 有两种写法
+<ul>
+<li>第一种写法是 from to</li>
+</ul>
+<pre><code>@keyframes slidein {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+</code></pre></li>
+<li>第二种写法是百分数</li>
+</ul>
+<pre><code>@keyframes identifier {
+    0% { top: 0; left: 0; }
+    30% { top: 50px; }
+    68%, 72% { left: 50px; }
+    100% { top: 100px; left: 100%; }
+}
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<p>以上就是我最近初步学习 CSS 的一些知识整理和心得了，记录下来，以后有问题方便查询。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

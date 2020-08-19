@@ -6,10 +6,24 @@
     <description>Recent content in Posts on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 17 Aug 2020 15:49:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 15:55:02 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅析URL</title>
+      <link>http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Wed, 19 Aug 2020 15:55:02 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/</guid>
+      <description>今天学习了一点 URL 的小知识，写一篇博客做一个总结归纳。
+URL 是什么，包含哪些部分 URL 的全称是Uniform Resource Locator，统一资源定位符，也就是俗称的网址。是李爵士发明用来做网页的地址的。它包含以下这些部分：
+ 协议  通常浏览网页会用HTTP或者HTTPS协议。 这两个协议规定了请求网页的格式以及相应的格式，为了让大家都能浏览网页。   域名或者IP  就是告诉你你要访问的网址是什么   路径  你要访问的是网址的哪个部分，根目录还是其他目录   查询参数  你要访问的是网址的哪个页面   锚点  你要访问的网址的页面里的某一块    DNS DNS 的全称是Domain Name System，域名系统。他是域名和IP互相映射的一个分布式数据库，能使人更方便地访问互联网。它是怎么运作的呢？ 当你输入一个网址的时候，你的浏览器会向你的运营商提供的DNS服务器询问这个网址对应的IP。怎么询问呢，我们可以用nslookup命令： 打开终端，然后输入nslookup baidu.com。会得到这个结果： 这就是告诉你，baidu.com这个网站对应的IP有两个。分别是39.156.69.79和220.181.38.148。
+IP IP 的全称是Internet Protocol，互联网协议。
+ 主要定义了两件事：  如何定位一台设备 如何封装数据以及和其他设备交流   可以使用ping命令测试网络是否连通  打开终端，输入ping baidu.com。得到结果如下：  表示与这个网站是可以连通的。    域名 域名的全称是Domain Name。因为IP地址太难记，所以就产生了域名这个东西，方便记忆，方便我们随时在浏览器地址栏输入我们熟悉的域名并快速访问。分为，顶级域名，二级域名，三级域名等等：
+ .</description>
+    </item>
     
     <item>
       <title>CSS知识总结</title>

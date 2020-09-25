@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>JS对象基本用法 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="JS对象基本用法" />
+<meta property="og:description" content="前几天学习了JS的数据类型。今天重点学习了JS数据类型里最重要也是最复杂的类型——对象。
+定义 什么是对象？简单说，对象就是一组“键值对”的集合，是一种无序的复合数据集合。
+声明对象 那我们怎么声明对象呢？目前有两种方式：
+ let object = {&#39;name&#39;: &#39;lisbeth&#39;} 这就是直接将变量声明成了对象的形式。 let object = new Object({&#39;name&#39;: &#39;lisbeth&#39;}) 这是使用Object包装器的方式声明一个新对象。  目前声明对象常用的就是这两种方式。
+删除对象的属性 那么我们有了对象之后，怎么删除对象的某些属性呢。
+ delete obj.xxx 或者 delete obj[&#39;xxx&#39;] 删除对象obj的xxx属性。 有人使用obj.xxx = undefined来删除obj的xxx属性，这是不正确的。 这只能将obj对象中的xxx属性的值设置为undefined，并没有将这个属性删除。 所以你并不能使用obj.xxx === undefined来判断对象obj是否含有xxx这个属性  查看对象的属性 上面讲了如何删除属性，那么我们怎么查看对象的属性呢。
+ 查看对象自身的所有属性  Object.keys(obj) 使用这个命令可以查看到对象自身的属性名。 Object.values(obj) 使用这个命令可以查看对象自身的属性值。 Object.entries(obj) 使用这个命令可以同时查看对象自身的键名和属性值。   查看自身加共有属性  console.dir(obj) 这个命令可以查看obj对象的自身属性以及共有属性。    修改或增加对象的属性 可以查看对象属性之后，又怎么修改或者增加对象的属性呢。
+ 直接赋值 let obj = {name: &#39;jack&#39;} // name 是字符串 obj." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" />
+<meta property="article:published_time" content="2020-09-26T01:07:48+08:00" />
+<meta property="article:modified_time" content="2020-09-26T01:07:48+08:00" />
+<meta itemprop="name" content="JS对象基本用法">
+<meta itemprop="description" content="前几天学习了JS的数据类型。今天重点学习了JS数据类型里最重要也是最复杂的类型——对象。
+定义 什么是对象？简单说，对象就是一组“键值对”的集合，是一种无序的复合数据集合。
+声明对象 那我们怎么声明对象呢？目前有两种方式：
+ let object = {&#39;name&#39;: &#39;lisbeth&#39;} 这就是直接将变量声明成了对象的形式。 let object = new Object({&#39;name&#39;: &#39;lisbeth&#39;}) 这是使用Object包装器的方式声明一个新对象。  目前声明对象常用的就是这两种方式。
+删除对象的属性 那么我们有了对象之后，怎么删除对象的某些属性呢。
+ delete obj.xxx 或者 delete obj[&#39;xxx&#39;] 删除对象obj的xxx属性。 有人使用obj.xxx = undefined来删除obj的xxx属性，这是不正确的。 这只能将obj对象中的xxx属性的值设置为undefined，并没有将这个属性删除。 所以你并不能使用obj.xxx === undefined来判断对象obj是否含有xxx这个属性  查看对象的属性 上面讲了如何删除属性，那么我们怎么查看对象的属性呢。
+ 查看对象自身的所有属性  Object.keys(obj) 使用这个命令可以查看到对象自身的属性名。 Object.values(obj) 使用这个命令可以查看对象自身的属性值。 Object.entries(obj) 使用这个命令可以同时查看对象自身的键名和属性值。   查看自身加共有属性  console.dir(obj) 这个命令可以查看obj对象的自身属性以及共有属性。    修改或增加对象的属性 可以查看对象属性之后，又怎么修改或者增加对象的属性呢。
+ 直接赋值 let obj = {name: &#39;jack&#39;} // name 是字符串 obj.">
+<meta itemprop="datePublished" content="2020-09-26T01:07:48&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-26T01:07:48&#43;08:00" />
+<meta itemprop="wordCount" content="151">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS对象基本用法"/>
+<meta name="twitter:description" content="前几天学习了JS的数据类型。今天重点学习了JS数据类型里最重要也是最复杂的类型——对象。
+定义 什么是对象？简单说，对象就是一组“键值对”的集合，是一种无序的复合数据集合。
+声明对象 那我们怎么声明对象呢？目前有两种方式：
+ let object = {&#39;name&#39;: &#39;lisbeth&#39;} 这就是直接将变量声明成了对象的形式。 let object = new Object({&#39;name&#39;: &#39;lisbeth&#39;}) 这是使用Object包装器的方式声明一个新对象。  目前声明对象常用的就是这两种方式。
+删除对象的属性 那么我们有了对象之后，怎么删除对象的某些属性呢。
+ delete obj.xxx 或者 delete obj[&#39;xxx&#39;] 删除对象obj的xxx属性。 有人使用obj.xxx = undefined来删除obj的xxx属性，这是不正确的。 这只能将obj对象中的xxx属性的值设置为undefined，并没有将这个属性删除。 所以你并不能使用obj.xxx === undefined来判断对象obj是否含有xxx这个属性  查看对象的属性 上面讲了如何删除属性，那么我们怎么查看对象的属性呢。
+ 查看对象自身的所有属性  Object.keys(obj) 使用这个命令可以查看到对象自身的属性名。 Object.values(obj) 使用这个命令可以查看对象自身的属性值。 Object.entries(obj) 使用这个命令可以同时查看对象自身的键名和属性值。   查看自身加共有属性  console.dir(obj) 这个命令可以查看obj对象的自身属性以及共有属性。    修改或增加对象的属性 可以查看对象属性之后，又怎么修改或者增加对象的属性呢。
+ 直接赋值 let obj = {name: &#39;jack&#39;} // name 是字符串 obj."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/&amp;text=JS%e5%af%b9%e8%b1%a1%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/&amp;title=JS%e5%af%b9%e8%b1%a1%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">JS对象基本用法</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-09-26T01:07:48&#43;08:00">September 26, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>前几天学习了JS的数据类型。今天重点学习了JS数据类型里最重要也是最复杂的类型——对象。</p>
+<h3 id="定义">定义</h3>
+<p>什么是对象？简单说，对象就是一组“键值对”的集合，是一种无序的复合数据集合。</p>
+<h3 id="声明对象">声明对象</h3>
+<p>那我们怎么声明对象呢？目前有两种方式：</p>
+<ol>
+<li><code>let object = {'name': 'lisbeth'}</code>
+这就是直接将变量声明成了对象的形式。</li>
+<li><code>let object = new Object({'name': 'lisbeth'})</code>
+这是使用Object包装器的方式声明一个新对象。</li>
+</ol>
+<p>目前声明对象常用的就是这两种方式。</p>
+<h3 id="删除对象的属性">删除对象的属性</h3>
+<p>那么我们有了对象之后，怎么删除对象的某些属性呢。</p>
+<ol>
+<li><code>delete obj.xxx</code> 或者 <code>delete obj['xxx']</code>
+删除对象obj的xxx属性。</li>
+<li>有人使用<code>obj.xxx = undefined</code>来删除obj的xxx属性，这是不正确的。
+这只能将obj对象中的xxx属性的值设置为undefined，并没有将这个属性删除。</li>
+<li>所以你并不能使用<code>obj.xxx === undefined</code>来判断对象obj是否含有xxx这个属性</li>
+</ol>
+<h3 id="查看对象的属性">查看对象的属性</h3>
+<p>上面讲了如何删除属性，那么我们怎么查看对象的属性呢。</p>
+<ol>
+<li>查看对象自身的所有属性
+<ul>
+<li><code>Object.keys(obj)</code>
+使用这个命令可以查看到对象自身的属性名。</li>
+<li><code>Object.values(obj)</code>
+使用这个命令可以查看对象自身的属性值。</li>
+<li><code>Object.entries(obj)</code>
+使用这个命令可以同时查看对象自身的键名和属性值。</li>
+</ul>
+</li>
+<li>查看自身加共有属性
+<ul>
+<li><code>console.dir(obj)</code>
+这个命令可以查看obj对象的自身属性以及共有属性。</li>
+</ul>
+</li>
+</ol>
+<h3 id="修改或增加对象的属性">修改或增加对象的属性</h3>
+<p>可以查看对象属性之后，又怎么修改或者增加对象的属性呢。</p>
+<ol>
+<li>直接赋值
+<code>let obj = {name: 'jack'}</code> // name 是字符串
+<code>obj.name = 'jack'</code> // name 是字符串
+<code>obj['name'] = 'jack'</code>
+<code>obj[name] = 'jack'</code> // 这个就错了，因为这里的name是变量</li>
+<li>批量赋值
+<code>Object.assign(obj, {age: 18, gender: 'man'})</code></li>
+<li>修改属性的时候，我们首先要明白一点，就是。我们无法通过修改或增加自身的属性去达到修改或增加共有属性的目的。举个例子：
+<code>let obj = {} let obj2 = {}</code> // 共有toString属性
+<code>obj.toString = 'xxx'</code> 只会更改obj自身的属性
+<code>obj2.toString</code>还是在它的原型上</li>
+<li>那如果我一定要修改原型上的属性呢，我们有两种方式
+<ul>
+<li><code>obj.__proto__.toString = 'xxx'</code> // 虽然这可以改，但是我们并不推荐这种改法</li>
+<li><code>obj.prototype.toString = 'xxx'</code></li>
+<li>一般来说，我们并不推荐修改原型，会引起很多问题</li>
+</ul>
+</li>
+<li>ES6 新出了一种语法可以让我们修改某个对象的原型，举个例子：
+<code>let common = {kind: 'human'}</code>
+<code>let obj = Object.create(common)</code>
+创建完之后，再赋值
+<code>obj.name = 'jack'</code></li>
+</ol>
+<h3 id="in-和-hasownproperty的区别">in 和 hasOwnProperty()的区别</h3>
+<p>我们知道了一个对象有自身属性和共有属性，那么我们怎么判断这个属性是属于自身属性还是共有属性呢？</p>
+<ol>
+<li>如果我们用<code>'name' in object === false</code>来判断
+<ul>
+<li><code>let obj = {'name': 'xiaomo'}</code></li>
+<li><code>'name' in obj</code> 的值是true</li>
+<li><code>'toString' in obj</code>的值也是true
+这样就没有办法判断是否是自身属性。</li>
+</ul>
+</li>
+<li>我们可以使用<code>obj.hasOwnProperty('name')</code>来判断
+<ul>
+<li><code>let obj = {'name': 'xiaomo'}</code></li>
+<li><code>obj.hasOwnProperty('name')</code> 的值是true</li>
+<li><code>obj.hasOwnProperty('toString')</code>的值是false
+证明name是自身属性，toString是共有属性。</li>
+</ul>
+</li>
+</ol>
+<p>对对象的初步认识就到这里了，以后继续深入学习后再进行说明。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

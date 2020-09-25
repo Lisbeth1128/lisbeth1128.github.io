@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2020-09-25T12:13:34+08:00" />
+<meta property="og:updated_time" content="2020-09-26T01:07:48+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="color-inherit dim link">
+            JS对象基本用法
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          前几天学习了JS的数据类型。今天重点学习了JS数据类型里最重要也是最复杂的类型——对象。
+定义 什么是对象？简单说，对象就是一组“键值对”的集合，是一种无序的复合数据集合。
+声明对象 那我们怎么声明对象呢？目前有两种方式：
+ let object = {'name': 'lisbeth'} 这就是直接将变量声明成了对象的形式。 let object = new Object({'name': 'lisbeth'}) 这是使用Object包装器的方式声明一个新对象。  目前声明对象常用的就是这两种方式。
+删除对象的属性 那么我们有了对象之后，怎么删除对象的某些属性呢。
+ delete obj.xxx 或者 delete obj['xxx'] 删除对象obj的xxx属性。 有人使用obj.xxx = undefined来删除obj的xxx属性，这是不正确的。 这只能将obj对象中的xxx属性的值设置为undefined，并没有将这个属性删除。 所以你并不能使用obj.xxx === undefined来判断对象obj是否含有xxx这个属性  查看对象的属性 上面讲了如何删除属性，那么我们怎么查看对象的属性呢。
+ 查看对象自身的所有属性  Object.keys(obj) 使用这个命令可以查看到对象自身的属性名。 Object.values(obj) 使用这个命令可以查看对象自身的属性值。 Object.entries(obj) 使用这个命令可以同时查看对象自身的键名和属性值。   查看自身加共有属性  console.dir(obj) 这个命令可以查看obj对象的自身属性以及共有属性。    修改或增加对象的属性 可以查看对象属性之后，又怎么修改或者增加对象的属性呢。
+ 直接赋值 let obj = {name: 'jack'} // name 是字符串 obj.
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="color-inherit dim link">
             JS语法
             </a>
@@ -174,41 +205,18 @@ JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/" class="color-inherit dim link">
-            浅析URL
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          今天学习了一点 URL 的小知识，写一篇博客做一个总结归纳。
-URL 是什么，包含哪些部分 URL 的全称是Uniform Resource Locator，统一资源定位符，也就是俗称的网址。是李爵士发明用来做网页的地址的。它包含以下这些部分：
- 协议  通常浏览网页会用HTTP或者HTTPS协议。 这两个协议规定了请求网页的格式以及相应的格式，为了让大家都能浏览网页。   域名或者IP  就是告诉你你要访问的网址是什么   路径  你要访问的是网址的哪个部分，根目录还是其他目录   查询参数  你要访问的是网址的哪个页面   锚点  你要访问的网址的页面里的某一块    DNS DNS 的全称是Domain Name System，域名系统。他是域名和IP互相映射的一个分布式数据库，能使人更方便地访问互联网。它是怎么运作的呢？ 当你输入一个网址的时候，你的浏览器会向你的运营商提供的DNS服务器询问这个网址对应的IP。怎么询问呢，我们可以用nslookup命令： 打开终端，然后输入nslookup baidu.com。会得到这个结果： 这就是告诉你，baidu.com这个网站对应的IP有两个。分别是39.156.69.79和220.181.38.148。
-IP IP 的全称是Internet Protocol，互联网协议。
- 主要定义了两件事：  如何定位一台设备 如何封装数据以及和其他设备交流   可以使用ping命令测试网络是否连通  打开终端，输入ping baidu.com。得到结果如下：  表示与这个网站是可以连通的。    域名 域名的全称是Domain Name。因为IP地址太难记，所以就产生了域名这个东西，方便记忆，方便我们随时在浏览器地址栏输入我们熟悉的域名并快速访问。分为，顶级域名，二级域名，三级域名等等：
- .
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
+              浅析URL
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
@@ -225,12 +233,6 @@ IP IP 的全称是Internet Protocol，互联网协议。
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
               HTML入门笔记1
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
-              使用Hugo搭建个人博客
             </a>
           </h2>
         

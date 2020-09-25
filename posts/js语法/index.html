@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>JS语法 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="JS语法" />
+<meta property="og:description" content="前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。
+JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。
+表达式和语句 这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。
+标识符 标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：
+ 规则  第一个字符，可以是Unicode字母或$或_或中文 后面的字符，除了上面所说的，还可以是数字   变量名是标识符  var _ = 1 var $ = 2 var 你好 = &#39;hi&#39;   一些建议  变量名最好能让人比较直观地看出它的用途 不知道英文的情况下，宁可用中文也不要用拼音    if&hellip;else&hellip; 语句 曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要if...else...就行了。
+ 语法  if(表达式){语句1}else{语句2} {} 语句在里面只有一句的时候可以省略，但还是不建议省略 如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容   switch —— 一个特殊的if&hellip;else&hellip;  语法    case &quot;banana&quot;: //... break; case &quot;apple&quot; //... break; default: //... }``` - break - 一定不要省略break，break文章后面会提到。 ### while 语句 当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" />
+<meta property="article:published_time" content="2020-09-25T12:13:34+08:00" />
+<meta property="article:modified_time" content="2020-09-25T12:13:34+08:00" />
+<meta itemprop="name" content="JS语法">
+<meta itemprop="description" content="前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。
+JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。
+表达式和语句 这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。
+标识符 标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：
+ 规则  第一个字符，可以是Unicode字母或$或_或中文 后面的字符，除了上面所说的，还可以是数字   变量名是标识符  var _ = 1 var $ = 2 var 你好 = &#39;hi&#39;   一些建议  变量名最好能让人比较直观地看出它的用途 不知道英文的情况下，宁可用中文也不要用拼音    if&hellip;else&hellip; 语句 曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要if...else...就行了。
+ 语法  if(表达式){语句1}else{语句2} {} 语句在里面只有一句的时候可以省略，但还是不建议省略 如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容   switch —— 一个特殊的if&hellip;else&hellip;  语法    case &quot;banana&quot;: //... break; case &quot;apple&quot; //... break; default: //... }``` - break - 一定不要省略break，break文章后面会提到。 ### while 语句 当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if.">
+<meta itemprop="datePublished" content="2020-09-25T12:13:34&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-25T12:13:34&#43;08:00" />
+<meta itemprop="wordCount" content="178">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS语法"/>
+<meta name="twitter:description" content="前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。
+JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。
+表达式和语句 这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。
+标识符 标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：
+ 规则  第一个字符，可以是Unicode字母或$或_或中文 后面的字符，除了上面所说的，还可以是数字   变量名是标识符  var _ = 1 var $ = 2 var 你好 = &#39;hi&#39;   一些建议  变量名最好能让人比较直观地看出它的用途 不知道英文的情况下，宁可用中文也不要用拼音    if&hellip;else&hellip; 语句 曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要if...else...就行了。
+ 语法  if(表达式){语句1}else{语句2} {} 语句在里面只有一句的时候可以省略，但还是不建议省略 如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容   switch —— 一个特殊的if&hellip;else&hellip;  语法    case &quot;banana&quot;: //... break; case &quot;apple&quot; //... break; default: //... }``` - break - 一定不要省略break，break文章后面会提到。 ### while 语句 当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/&amp;text=JS%e8%af%ad%e6%b3%95" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/&amp;title=JS%e8%af%ad%e6%b3%95" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">JS语法</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-09-25T12:13:34&#43;08:00">September 25, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。</p>
+<h3 id="js-版本">JS 版本</h3>
+<p>前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。</p>
+<h3 id="表达式和语句">表达式和语句</h3>
+<p>这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。</p>
+<h3 id="标识符">标识符</h3>
+<p>标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：</p>
+<ol>
+<li>规则
+<ul>
+<li>第一个字符，可以是<code>Unicode</code>字母或<code>$</code>或<code>_</code>或中文</li>
+<li>后面的字符，除了上面所说的，还可以是数字</li>
+</ul>
+</li>
+<li>变量名是标识符
+<ul>
+<li><code>var _ = 1</code></li>
+<li><code>var $ = 2</code></li>
+<li><code>var 你好 = 'hi'</code></li>
+</ul>
+</li>
+<li>一些建议
+<ul>
+<li>变量名最好能让人比较直观地看出它的用途</li>
+<li>不知道英文的情况下，宁可用中文也不要用拼音</li>
+</ul>
+</li>
+</ol>
+<h3 id="ifelse-语句">if&hellip;else&hellip; 语句</h3>
+<p>曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要<code>if...else...</code>就行了。</p>
+<ol>
+<li>语法
+<ul>
+<li><code>if(表达式){语句1}else{语句2}</code></li>
+<li>{} 语句在里面只有一句的时候可以省略，但还是不建议省略</li>
+<li>如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容</li>
+</ul>
+</li>
+<li>switch —— 一个特殊的if&hellip;else&hellip;
+<ul>
+<li>语法</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-switch" data-lang="switch">  case &quot;banana&quot;:
+  //...
+  break;
+  case &quot;apple&quot;
+  //...
+  break;
+  default:
+  //...
+}```
+
+   - break
+      - 一定不要省略break，break文章后面会提到。
+
+### while 语句
+当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if...else...，这个时候你就需要用到while
+1. 语法
+   - ```while(表达式){语句}```
+   - 判断表达式的真假
+   - 当表达式为真，执行语句，执行完再判断表达式的真假
+   - 当表达式为假，执行后面的语句
+2. do...while 这个是先执行，后判断，用的并不多
+
+### for 循环
+当你发现，用了while循环，结构有点啰嗦，或者说结构不够立体。于是大家又创造出了for循环。for循环是while循环的语法糖
+1. 语法
+    - ```for(语句1;表达式2;语句3){循环体}```
+    - 先执行语句1
+    - 然后判断表达式2
+    - 如果为真，执行循环体，然后执行语句3
+    - 如果为假，直接退出循环，执行后面的语句
+    
+for循环极大程度上使while循环结构变得更加立体，只是需要你进行一定的理解，以及明白语句的先后执行顺序
+
+### break 和 continue
+1. 区别
+    - break 是会退出最近的那个循环的所有循环
+    - continue 只会退出最近的那个循环的某一环
+2. 举例
+    - ```for(var i = 0; i &lt; 10; i++){
+    if(i%2===1){
+      break;
+    }
+}```
+这个表示碰到第一个奇数的时候，立马就结束了这个循环，即使后面还有其他奇数也不管了。
+
+   - ```for(var i = 0; i &lt; 10; i++){
+    if(i%2===1){
+      continue
+    }else{
+      console.log(i)
+    }
+}```
+这个表示当他是奇数的时候，不进行任何操作，跳过，判断下一个数。如果是偶数就打出来，然后继续判断接下来的数，直到程序结束。
+
+   - ```for(var i = 0; i &lt; 10; i++){for(var j = 101; j &lt; 110; j++){if(i === 5){break;}}console.log(i)}```
+   当有双循环的时候，break只会跳出离他最近的那个循环，并不会跳出所有的循环。
+
+### label 语句
+1. 语法
+    - ```foo: {
+  console.log(1);
+  break foo;
+  console.log('本行不会输出')
+}
+console.log(2);```
+它是一个标签，表示foo标签里的内容。
+2. 特殊例子
+   - ```{foo: 1}``` 是什么
+   - 这是一个代码块，里面有一个foo标签，标签的内容是1。
+   - 它并不是一个对象
+
+今天大概学习了一些JS的基础语法，之后要如何用好这些东西，就是之后深入学习JS需要做的事了。先学好基础，每个概念都要理解清楚透彻，才不会到后面无法理解其他东西。写代码一定要清楚你自己写下的代码是什么。
+</code></pre><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -6,10 +6,24 @@
     <description>Recent content in Posts on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 24 Aug 2020 03:18:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 12:13:34 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS语法</title>
+      <link>http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Fri, 25 Sep 2020 12:13:34 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/</guid>
+      <description>前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。
+JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。
+表达式和语句 这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。
+标识符 标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：
+ 规则  第一个字符，可以是Unicode字母或$或_或中文 后面的字符，除了上面所说的，还可以是数字   变量名是标识符  var _ = 1 var $ = 2 var 你好 = &#39;hi&#39;   一些建议  变量名最好能让人比较直观地看出它的用途 不知道英文的情况下，宁可用中文也不要用拼音    if&amp;hellip;else&amp;hellip; 语句 曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要if...else...就行了。
+ 语法  if(表达式){语句1}else{语句2} {} 语句在里面只有一句的时候可以省略，但还是不建议省略 如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容   switch —— 一个特殊的if&amp;hellip;else&amp;hellip;  语法    case &amp;quot;banana&amp;quot;: //... break; case &amp;quot;apple&amp;quot; //... break; default: //... }``` - break - 一定不要省略break，break文章后面会提到。 ### while 语句 当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if.</description>
+    </item>
     
     <item>
       <title>JavaScript诞生记</title>

@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2020-08-24T03:18:04+08:00" />
+<meta property="og:updated_time" content="2020-09-25T12:13:34+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="color-inherit dim link">
+            JS语法
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。
+JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。
+表达式和语句 这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。
+标识符 标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：
+ 规则  第一个字符，可以是Unicode字母或$或_或中文 后面的字符，除了上面所说的，还可以是数字   变量名是标识符  var _ = 1 var $ = 2 var 你好 = 'hi'   一些建议  变量名最好能让人比较直观地看出它的用途 不知道英文的情况下，宁可用中文也不要用拼音    if&hellip;else&hellip; 语句 曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要if...else...就行了。
+ 语法  if(表达式){语句1}else{语句2} {} 语句在里面只有一句的时候可以省略，但还是不建议省略 如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容   switch —— 一个特殊的if&hellip;else&hellip;  语法    case &quot;banana&quot;: //... break; case &quot;apple&quot; //... break; default: //... }``` - break - 一定不要省略break，break文章后面会提到。 ### while 语句 当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if.
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/javascript%E8%AF%9E%E7%94%9F%E8%AE%B0/" class="color-inherit dim link">
             JavaScript诞生记
             </a>
@@ -174,38 +203,18 @@ IP IP 的全称是Internet Protocol，互联网协议。
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
-            CSS知识总结
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          最近稍微学习了一些 CSS 的基础知识，了解了一个大概。现在对最近学的这些知识做一个梳理总结，加强一下学习的记忆。
-CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士的同事提出的。 层叠的意思。  样式层叠：可以同时对同一选择器做样式声明。 选择器层叠：可以用不同的选择器对同一个元素做样式声明。 文件层叠：可以使用多个CSS文件对同一HTML文件做声明。   CSS 版本 目前运用最广泛的是CSS2.1版本，现在开始已经不是以一整个版本升级了，而是分成各个模块，各个模块自主升级。  文档流  英文是Normal Flow，也就普通流，文档流是中文翻译。简单说指的就是元素按照它在HTML中的位置进行排布的过程。 流动方向。  inline： 元素从左到右，到达最右才会换行。 block：元素从上到下，每一个都另起一行。 inline-block：元素也是从左到右，到达最后换行，但是不会把元素分成两块。    盒模型  content-box：内容盒。content-box的宽度就是内容的宽度。 border-box：边框盒。border-box的宽度是内容的宽度+padding的宽度+border的宽度。  CSS 布局 CSS 目前用的大概是三种布局。
- Float 布局。  子元素上加 float:left; 和 width 父元素上加 .clearfix  .clearfix::after{ content:''; display: block; clear: both; }  Flex 布局  父元素container的样式  让一个元素变成Flex容器 display: flex | inline-flex; 改变items的流动方向（主轴） flex-direction: row | row-reverse | column | column-reverse; 改变折行 flex-wrap: nowrap | wrap | wrap-reverse; 主轴对齐方式（默认是横轴） justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 次轴对齐方式（默认是纵轴） align-items: stretch | flex-start | flex-end | center | baseline 多行内容 align-content: flex-start | flex-end | center | stretch | space-betwteen | space-around   子元素items的属性  item 上面加上 order item 上面加上 flex-grow 控制自己长胖 item 上面加上 flex-shrink 控制自己变瘦   Flex 的属性还有很多，用到的时候可以去查询 MDN。   Grid 布局  Grid 也分 container 和 items 成为 container display: grid | inline-grid; 行和列 grid-template-columns: 40px 50px auto 50px 40px; grid-template-raws: 25% 100px auto;      Grid 的属性很多，用法也很灵活，详细可以用的时候再查询，先了解一个大概就行。  CSS 定位 布局是屏幕平面的，定位是垂直于屏幕的。
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+              CSS知识总结
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
@@ -222,12 +231,6 @@ CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
               使用Hugo搭建个人博客
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://lisbeth1128.github.io//posts/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="link black dim">
-              第二篇博客
             </a>
           </h2>
         

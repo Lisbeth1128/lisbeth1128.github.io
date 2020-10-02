@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//posts/" />
-<meta property="og:updated_time" content="2020-09-26T01:07:48+08:00" />
+<meta property="og:updated_time" content="2020-10-02T21:45:57+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -96,6 +96,30 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://lisbeth1128.github.io//posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+        JS函数的执行时机
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      今天学习了JS的函数内容。知道每个JS函数都有调用时机。一些简单代码还是比较好理解的，但是如果碰到一些稍微复杂的代码，就需要结合闭包等其他概念来进行理解了。下面看一个例子：
+let i = 0 for(i = 0; i &lt; 6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 这个例子会输出6个6。为什么？ setTimeout()这个函数的意思是过一会儿执行。也就是说，在上面这一段代码里的意思是，过一会儿打印出i的值。但是一共执行了6次，而过一会儿i就变成了6，所以会打印出6个6。但是为什么过一会儿取的是6这个值呢？这就要从如何实现闭包说起了。
+JS 的闭包 JS 实现闭包的时候，是capture variable的。意思就是，当一个闭包引用了外部变量，它就把这个变量名记下来，等到需要用到的时候，用这个变量名，去查这个变量值是多少。
+其他某些语言的闭包 而有一些语言，是另外一种策略，是capture value的。意思就是，当一个闭包引用了外部变量，当这个闭包创建的那一刻，立刻查询那个外部变量的值是多少。把这个值固化下来。那么在那之后，到下一次闭包建立之前，不管这个外部变量变成了多少，都跟这个闭包无关了。
+区别 他们本质上最大的区别，就是这些闭包是否可以通过某一个相同的“变量”来共享状态。capture variable 可以，但是capture value 不行。
+所以，我们上面这段代码，就会输出6个6。那么，怎么让它输出0，1，2，3，4，5呢？
+方法一 for(let i = 0; i &lt; 6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 我们只需要将let声明放到里面，那么输出的就是，0，1，2，3，4，5。原因上面已经解释了。
+既然如此，我们还有没有其他除了用let+for循环以外的方法让我们得到这个结果呢。
+方法二 let i for(i = 0; i&lt;6; i++){ let x = i setTimeout(()=&gt;{ console.log(x) }) } 引入另外一个变量，将i的值赋值给这个变量，之后这个变量值怎么变化就与i之后的变化无关了。
+方法三 let i for(i = 0; i&lt;6; i++){ setTimeout((value)=&gt;{ console.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -262,22 +286,27 @@ a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的�
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://lisbeth1128.github.io//posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" class="link black dim">
-        开博大吉
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      我的博客测试 测试一下hugo的效果。
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
+<ul class="pagination">
+  <li class="page-item">
+    <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/posts/">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/posts/page/2/">2</a>
+  </li>
+  <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
+</ul>
 
 </article>
 

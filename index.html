@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2020-10-02T21:45:57+08:00" />
+<meta property="og:updated_time" content="2020-12-09T04:36:37+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,36 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E8%B0%88jquery/" class="color-inherit dim link">
+            浅谈jQuery
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          最近一直在学习jQuery。虽然现在大部分工作并不对此有要求，但是了解jQuery之后发现，设计得甚是巧妙。作为一个新人，希望在不断学习之后也能写出这么精妙的设计。言归正传，现在来稍微讲讲jQuery的使用方法。
+jQuery 如何获取元素 jQuery可以获取到网页的某个元素，然后对其进行操作。它的参数可以是符合css语法的选择器。
+ $('#Id') 获取到ID为Id的元素 $('.red') 获取到class为red的元素 $('div.red') 获取到class为red的所有div元素 $(document) 获取到整个文档对象  这比DOM的获取方式简单许多，甚至都不需要写jQuery，直接用$就可以。
+jQuery 的链式操作 前面讲到，jQuery设计的一大特点就是，获取到了某个网页元素就可以对它进行操作。并且可以操作一次后继续操作，这就是jQuery的链式操作，比如： $('#test').find('.child').addClass('red') 我们分开来看看
+ $('#test') 获取到id为test的元素 .find('.child') 获取到class为child的元素 .addClass('red') 给这些元素加上red这个class 这就是链式操作。因为jQuery每一步操作，返回的都是一个jQuery对象，所以可以连续地进行操作。这也是jQuery的一大设计亮点。  jQuery 如何创建元素 我们使用jQuery构造函数直接创建元素，非常简单 $('&lt;div&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;') 就是创建一个div元素，div里有一个span元素，然后 .appendTo(document.body) 就可以把这个创建出来的元素插入到body里面。
+jQuery 如何移动元素 我们可以将某个需要的元素放到另外一个元素的前面，或者后面。
+ $('div').insertAfter($('p')) 在p元素后面插入div元素 $('p').after('div') 把p元素加到div元素前面 这两种方式效果是一样的，只不过操作的对象不同，所以可以根据自己的需求来选择。  jQuery 如何修改元素的属性  $('#p').attr('class') 获取id为p的元素的class属性 $('#p').attr('class','red') 如果有第二个参数，就是给p元素的class加一个red属性 这是一个很有意思的例子。因为这是jQuery的一个巧妙的设计。这是一个getter/setter模式。就是指这个函数，既可以读也可以写。 $('#p').addClass('blue') 给id为p的元素增加一个blue的class属性 $('#p').removeClass('yellow') 删除id为p的元素的yellow的class属性  jQuery 设计得巧妙的地方还有很多，虽然现在工作中会比较少地提到他，但是它的设计模式还是很值得学习的。希望以后也能写出这么构思巧妙的代码。
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E8%B0%88jquery/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="color-inherit dim link">
             JS函数的执行时机
             </a>
@@ -183,41 +213,18 @@ JS 的闭包 JS 实现闭包的时候，是capture variable的。意思就是，
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="color-inherit dim link">
-            JS语法
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          前几天学习了JS的历史，了解的JS大概是在怎么样一个环境下产生的。今天学了一点具体的语法，现在来进行一个大概的总结。
-JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准的时候，使用的ECMAScript这个名字，所以后来的版本标准缩写就是ES。从一开始的EC3到后来的ES6，到现在的ES2019。JS有着比较大的进步，但还有一些历史原因遗留下来的问题，我们需要区别对待。
-表达式和语句 这两个概念其实如果仔细较真，比较难以区分。一般来说，表达式基本都有值，语句可能有也可能没有；语句一般会改变环境。但是这两个区分也不是绝对的。事实上，并没有一个详细透彻的解释可能将这两个概念区分得特别清楚。也有很多人认为编程语言区分这两个概念并不是一个很好的主意，而像Lisp语言不区分表达式和语句的语言也有。作为初学者，大概我也就只能理解到这里，深层次的利弊好坏要到以后才能慢慢分析。
-标识符 标识符是程序员定义的名称，代表程序的某些元素，如变量之类的。JavaScript语言有这些规定：
- 规则  第一个字符，可以是Unicode字母或$或_或中文 后面的字符，除了上面所说的，还可以是数字   变量名是标识符  var _ = 1 var $ = 2 var 你好 = 'hi'   一些建议  变量名最好能让人比较直观地看出它的用途 不知道英文的情况下，宁可用中文也不要用拼音    if&hellip;else&hellip; 语句 曾经有个人问过我，他说，你觉得如果要实现一个目标程序，你觉得哪些逻辑是一定不可少的。我想了很久，也不是很确定地说，大概只需要if...else...就行了。
- 语法  if(表达式){语句1}else{语句2} {} 语句在里面只有一句的时候可以省略，但还是不建议省略 如果没有{}的情况下，程序自动只会认为后面的第一句是{}里面的 内容   switch —— 一个特殊的if&hellip;else&hellip;  语法    case &quot;banana&quot;: //... break; case &quot;apple&quot; //... break; default: //... }``` - break - 一定不要省略break，break文章后面会提到。 ### while 语句 当你发现，你要不停地成败上次地做判断的时候，你没办法一个一个地去写if.
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="link black dim">
+              JS语法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/javascript%E8%AF%9E%E7%94%9F%E8%AE%B0/" class="link black dim">
@@ -234,12 +241,6 @@ JS 版本 前面有讲到，当时为了版权问题，在JavaScript发布标准
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
               CSS知识总结
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://lisbeth1128.github.io//posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
-              HTML常用标签
             </a>
           </h2>
         

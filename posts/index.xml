@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 09 Dec 2020 04:36:37 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 02:28:04 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOM事件模型</title>
+      <link>http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Thu, 10 Dec 2020 02:28:04 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/</guid>
+      <description>今天学习了 DOM 事件模型。这是一个比较重要的概念，我想作为一个新人，如果要真正的消化需要花比较多的一些时间。现在就把脑子里理解到的部分讲一讲。首先我们来看一段代码
+&amp;lt;div class=class2&amp;gt; &amp;lt;div class=class3&amp;gt; 文字 &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;``` 现在在三个div上加上三个监听事件，分别为fn1，fn2，fn3。 假设我现在点击了xxx，触发了三个事件，那么fn1、fn2、fn3这三个事件，先调用谁呢？ 2002年，W3C发布了标准。表示浏览器都应该支持从外到内以及从内到外的调用。顺序是： 从class1=&amp;gt;class2=&amp;gt;class3，然后，再从class3=&amp;gt;class2=&amp;gt;class1。 其中，class1=&amp;gt;class2=&amp;gt;class3的调用顺序，叫做捕获。class3=&amp;gt;class2=&amp;gt;class1的调用顺序，叫做冒泡。 但是这并不代表，你需要在捕获和调用的时候都执行监听函数，这个是你可以选择的。选择自己在捕获阶段或者在冒泡阶段执行监听函数。 我们引入一个DOM函数叫 `addEventListener()`来帮我们实现这个功能。 `xxx.addEventListener(&#39;click&#39;,fn,bool)` 其中，&#39;click&#39;是事件，fn是调用函数，bool可以取两个值，不传就表示取falsy值。 - 如果bool取值为true，那么当浏览器在捕获阶段的时候如果发现有监听函数，就执行。 - 如果bool不取值，或者取为falsy值，那么当浏览器在冒泡阶段的时候如果发现有监听函数，就执行。 这就是一个简单的大致的 DOM 事件模型。</description>
+    </item>
     
     <item>
       <title>浅谈jQuery</title>

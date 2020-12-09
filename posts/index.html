@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//posts/" />
-<meta property="og:updated_time" content="2020-12-09T04:36:37+08:00" />
+<meta property="og:updated_time" content="2020-12-10T02:28:04+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -96,6 +96,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" class="link black dim">
+        DOM事件模型
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      今天学习了 DOM 事件模型。这是一个比较重要的概念，我想作为一个新人，如果要真正的消化需要花比较多的一些时间。现在就把脑子里理解到的部分讲一讲。首先我们来看一段代码
+&lt;div class=class2&gt; &lt;div class=class3&gt; 文字 &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;``` 现在在三个div上加上三个监听事件，分别为fn1，fn2，fn3。 假设我现在点击了xxx，触发了三个事件，那么fn1、fn2、fn3这三个事件，先调用谁呢？ 2002年，W3C发布了标准。表示浏览器都应该支持从外到内以及从内到外的调用。顺序是： 从class1=&gt;class2=&gt;class3，然后，再从class3=&gt;class2=&gt;class1。 其中，class1=&gt;class2=&gt;class3的调用顺序，叫做捕获。class3=&gt;class2=&gt;class1的调用顺序，叫做冒泡。 但是这并不代表，你需要在捕获和调用的时候都执行监听函数，这个是你可以选择的。选择自己在捕获阶段或者在冒泡阶段执行监听函数。 我们引入一个DOM函数叫 `addEventListener()`来帮我们实现这个功能。 `xxx.addEventListener('click',fn,bool)` 其中，'click'是事件，fn是调用函数，bool可以取两个值，不传就表示取falsy值。 - 如果bool取值为true，那么当浏览器在捕获阶段的时候如果发现有监听函数，就执行。 - 如果bool不取值，或者取为falsy值，那么当浏览器在冒泡阶段的时候如果发现有监听函数，就执行。 这就是一个简单的大致的 DOM 事件模型。
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -267,26 +283,6 @@ a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的�
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       今天学习了HTML简单的一些入门内容，现在写成博客整理一下。
  HTML 是谁发明的 HTML 全称 HyperText Markup Language，超文本标记语言。是上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·博纳斯-李（Tim Berners-Lee），也就是我们所说的李爵士发明的。 HTML 的起手式 我用的是VSCode，打开VScode，然后创建一个HTML文件，右下角语言如果不是HTML可以改成HTML。然后输入一个!感叹号，再按Tab键，或者回车键，就会出现一大段代码。 这个就是起手式，每个HTML文件都需要有这么一些基本的设置。然后我们来稍微看看这些设置。  &lt;!DOCTYPE html&gt;文档类型 &lt;html lang=&quot;en&quot;&gt;这是html标签。可以把语言改成zh-CN，这样浏览器会知道这个界面主要用的是什么语言。 一般来说&lt;head&gt;和&lt;body&gt;标签不进行缩进 &lt;meta charset=&quot;UTF-8&quot;&gt; 文件的字符编码是utf-8，这个一般写在最前面，方便浏览器知道之后的文字用的是什么字符编码。 content=&quot;width=device-width 禁用缩放，兼容手机端。 content=&quot;ie=edge&quot; 告诉IE，使用的是最新的内核。   常用的章节标签 章节标签有很多，挑一些常用地简单说一下。  h1~h6：标题。h1字体最大，往后越来越小。 section：章节。表示用这个标签扩起来的是一个章节，章节可以嵌套章节。 p：段落。表示用这个标签括起来的是一个段落。 header：头部。可以放一些像导航之类的东西。 footer：脚部。版权声明一般放在这里，&amp;copy;这个就是版权符号©的写法。 main：主要内容。这个标签里包括的是主体内容，像导航、侧边栏，版权等的东西不能放在里面。 aside：旁支内容。这个标签里包括的是与主要内容无关的内容，比如侧边栏之类的东西，一般都放在这里。 div：划分。division，应该是这个词的简写。div可以嵌套div。   全局属性 全局属性就是所有标签都有的属性，有这些：  class：class属性可以让一组标签都有同样的属性。 contenteditable：是一个枚举属性，表示元素是否可以被用户编辑。 hidden：hidden是一个布尔属性，表示元素是否隐藏。 id：只有非常确定的唯一的属性用id，作为新手，能不用尽量不用。因为如果你两个元素用了同一个id，浏览器是不会报错的，你没有办法判断你是否只用在了一个元素上。 style：这是元素的属性，所以他的优先级高于css设置的样式，但是可以被javascript所写的属性覆盖。 tabindex：表示元素是否可以聚焦，并且在什么时候参与聚焦。当它是负数的时候，表示可以被聚焦，但是不能通过键盘访问到；当它是0的时候，表示可以被聚焦，并且可以通过键盘访问到。数值越小，越可以先被访问到。通常给予没有鼠标的用户设置这个属性。 title：标题。这个标签只用在&lt;head&gt;块里。表示文档的标题。   常用的内容标签  ol+li：有序列表。 ul+li：无序列表。 dl+dd+dt：表格。 pre：在这个标签里的内容会原封不动地输出到网页中，空格也会一模一样。 hr：水平分割线。 br：换行符。 a：超链接。当你要在一个网页里插入一个链接，就需要用到这个标签。 em：强调。通常显示是斜体，是一个语气上的强调。 strong：强调。通常显示是加粗，这个和em有所不同，他表示的是他扩起来的内容本身就很重要。    这只是刚刚入门了解的一些HTML的标签，还有很多很多东西还没有学习，以后会慢慢深入，初级阶段就先聊到这里。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        使用Hugo搭建个人博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。
-下载 Hugo 鉴于我使用的是 Mac，我就只讲 Mac 的操作了。 因为之间装了 Homebrew，所以我只需要使用brew install hugo 命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用hugo version命令，得到一个V开头的数字串就是安装成功了。
-搭建博客网站 这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤
- hugo new xxxx xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 hugo new xxxx.github.io-creator，这里的```xxxx````就是你 github 的用户名了，比较方便。 使用一个主题 先cd 你刚才建的文件夹进入你刚才建的目录里，然后git init，然后使用官网给的示例主题git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke，可能会有点慢。最后，使用echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml命令，将这个主题名字写入到配置文件中。 创建第一篇博客 搞定以上步骤之后，就可以创建我们的第一篇博客了，使用hugo new posts/xxxx.md命令，这里的xxxx就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置draft: true，将它改成false，意思就是可以发布让别人看到了。  预览网站 已经写完了博客，那接下来我们需要看一下它的效果。
- 使用命令hugo server -D来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。 如果博客是用中文居多的话，我们还需要用编辑器打开config.toml，对其中的东西进行修改。将languageCode = &quot;en-us&quot;中得en-us改成zh-Hans。 没有什么问题的话，就可以生成第一篇博客了。使用hugo -D命令，就会在当前目录下生成一个public文件夹，第一篇博客里的东西都在里面。  上传到 GitHub 上 这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。
- 为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个.
     </div>
   </div>
 </div>

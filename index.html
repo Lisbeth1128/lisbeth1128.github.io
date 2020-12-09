@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2020-12-09T04:36:37+08:00" />
+<meta property="og:updated_time" content="2020-12-10T02:28:04+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" class="color-inherit dim link">
+            DOM事件模型
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          今天学习了 DOM 事件模型。这是一个比较重要的概念，我想作为一个新人，如果要真正的消化需要花比较多的一些时间。现在就把脑子里理解到的部分讲一讲。首先我们来看一段代码
+&lt;div class=class2&gt; &lt;div class=class3&gt; 文字 &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;``` 现在在三个div上加上三个监听事件，分别为fn1，fn2，fn3。 假设我现在点击了xxx，触发了三个事件，那么fn1、fn2、fn3这三个事件，先调用谁呢？ 2002年，W3C发布了标准。表示浏览器都应该支持从外到内以及从内到外的调用。顺序是： 从class1=&gt;class2=&gt;class3，然后，再从class3=&gt;class2=&gt;class1。 其中，class1=&gt;class2=&gt;class3的调用顺序，叫做捕获。class3=&gt;class2=&gt;class1的调用顺序，叫做冒泡。 但是这并不代表，你需要在捕获和调用的时候都执行监听函数，这个是你可以选择的。选择自己在捕获阶段或者在冒泡阶段执行监听函数。 我们引入一个DOM函数叫 `addEventListener()`来帮我们实现这个功能。 `xxx.addEventListener('click',fn,bool)` 其中，'click'是事件，fn是调用函数，bool可以取两个值，不传就表示取falsy值。 - 如果bool取值为true，那么当浏览器在捕获阶段的时候如果发现有监听函数，就执行。 - 如果bool不取值，或者取为falsy值，那么当浏览器在冒泡阶段的时候如果发现有监听函数，就执行。 这就是一个简单的大致的 DOM 事件模型。
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E8%B0%88jquery/" class="color-inherit dim link">
             浅谈jQuery
             </a>
@@ -182,43 +207,18 @@ JS 的闭包 JS 实现闭包的时候，是capture variable的。意思就是，
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="color-inherit dim link">
-            JS对象基本用法
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          前几天学习了JS的数据类型。今天重点学习了JS数据类型里最重要也是最复杂的类型——对象。
-定义 什么是对象？简单说，对象就是一组“键值对”的集合，是一种无序的复合数据集合。
-声明对象 那我们怎么声明对象呢？目前有两种方式：
- let object = {'name': 'lisbeth'} 这就是直接将变量声明成了对象的形式。 let object = new Object({'name': 'lisbeth'}) 这是使用Object包装器的方式声明一个新对象。  目前声明对象常用的就是这两种方式。
-删除对象的属性 那么我们有了对象之后，怎么删除对象的某些属性呢。
- delete obj.xxx 或者 delete obj['xxx'] 删除对象obj的xxx属性。 有人使用obj.xxx = undefined来删除obj的xxx属性，这是不正确的。 这只能将obj对象中的xxx属性的值设置为undefined，并没有将这个属性删除。 所以你并不能使用obj.xxx === undefined来判断对象obj是否含有xxx这个属性  查看对象的属性 上面讲了如何删除属性，那么我们怎么查看对象的属性呢。
- 查看对象自身的所有属性  Object.keys(obj) 使用这个命令可以查看到对象自身的属性名。 Object.values(obj) 使用这个命令可以查看对象自身的属性值。 Object.entries(obj) 使用这个命令可以同时查看对象自身的键名和属性值。   查看自身加共有属性  console.dir(obj) 这个命令可以查看obj对象的自身属性以及共有属性。    修改或增加对象的属性 可以查看对象属性之后，又怎么修改或者增加对象的属性呢。
- 直接赋值 let obj = {name: 'jack'} // name 是字符串 obj.
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+              JS对象基本用法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/js%E8%AF%AD%E6%B3%95/" class="link black dim">
@@ -235,12 +235,6 @@ JS 的闭包 JS 实现闭包的时候，是capture variable的。意思就是，
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
               浅析URL
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://lisbeth1128.github.io//posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
-              CSS知识总结
             </a>
           </h2>
         

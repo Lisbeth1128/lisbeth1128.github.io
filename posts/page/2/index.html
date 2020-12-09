@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//posts/" />
-<meta property="og:updated_time" content="2020-12-09T04:36:37+08:00" />
+<meta property="og:updated_time" content="2020-12-10T02:28:04+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -96,6 +96,26 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://lisbeth1128.github.io//posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
+        使用Hugo搭建个人博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      今天学习了 Hugo ，据说这是目前世界上最快的博客生成器，是用 Go 语言编写的。学完决定写博客，对这个工具的使用进行一些整理，纯新手，如果说的不对还请见谅。
+下载 Hugo 鉴于我使用的是 Mac，我就只讲 Mac 的操作了。 因为之间装了 Homebrew，所以我只需要使用brew install hugo 命令就可以下载 hugo 到电脑上。然后为了确认自己是否已经安装成功，以及想知道 hugo 的版本，就使用hugo version命令，得到一个V开头的数字串就是安装成功了。
+搭建博客网站 这个网站的官网有一个官方引导，写得很详细，只要按照它的引导来就行，这里也简单地说一下大概的步骤
+ hugo new xxxx xxxx 是新文件夹的名字，因为是作为博客生成器，所以用一个比较有意义的名字，让我们知道这是用来干什么的，所以老师推荐我们用的是 hugo new xxxx.github.io-creator，这里的```xxxx````就是你 github 的用户名了，比较方便。 使用一个主题 先cd 你刚才建的文件夹进入你刚才建的目录里，然后git init，然后使用官网给的示例主题git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke，可能会有点慢。最后，使用echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml命令，将这个主题名字写入到配置文件中。 创建第一篇博客 搞定以上步骤之后，就可以创建我们的第一篇博客了，使用hugo new posts/xxxx.md命令，这里的xxxx就是你的第一篇博客的名字。然后使用你自己的编辑器打开这个文件进行编辑。需要注意的是，打开之后，它文件里原先有的东西，先不要动。另起一行，写下你的第一篇博客。然后回到文件顶部，有一个设置draft: true，将它改成false，意思就是可以发布让别人看到了。  预览网站 已经写完了博客，那接下来我们需要看一下它的效果。
+ 使用命令hugo server -D来预览你写好的博客网站，看看有没有哪里不对，可以再回去更改。 如果博客是用中文居多的话，我们还需要用编辑器打开config.toml，对其中的东西进行修改。将languageCode = &quot;en-us&quot;中得en-us改成zh-Hans。 没有什么问题的话，就可以生成第一篇博客了。使用hugo -D命令，就会在当前目录下生成一个public文件夹，第一篇博客里的东西都在里面。  上传到 GitHub 上 这里我们需要注意一些事，首先就是，我们要把发布的博客和博客生成器分开。分别要有两个仓库，一个用来放博客生成器，另一个用来放你的博客。
+ 为了不将public文件夹里的东西和博客生成器里的东西混淆，我们在博客生成器目录里新建一个.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">

@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//posts/" />
-<meta property="og:updated_time" content="2020-12-10T02:28:04+08:00" />
+<meta property="og:updated_time" content="2020-12-10T02:29:43+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -96,6 +96,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="link black dim">
+        事件委托
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      之前我们学习了DOM的事件模型，了解到了捕获和冒泡。但是并不知道有什么用途。今天我们要讲它的一个用途，就是可以实现事件委托。 试想一下，如果我们需要对一批元素进行相同的处理。我们就不必要为他们每一个都写程序，我们可以只写一个程序，然后将它绑定在我们需要处理的元素的祖先元素上。
+ 假设，我们有100个按钮，我们需要为监听他们，我们不可能写100个绑定时间然后分别绑定在这些按钮上。我们可以在按钮的祖先元素上绑定一个事件，然后对其进行监听即可。  const t = e.target if(t.tagName.toLowerCase() === 'button'){ console.log('button 被点击了') console.log('button data-id 是'+t.dataset.id) } })``` 2. 再比如，我们如果要监听一个目前还不存在的元素，怎么办。那我们只能监听它的祖先，然后在执行的时候看看是不是我要的那个元素。 ```setTimeout(()=&gt;{ const button = document.createElement('button') button.textContent = 'click 1' div1.appendChild(button) }, 1000)``` ```div1.addEventListener('click', (e)=&gt;{ const t = e.target if(t.tagName.toLowerCase() === 'button'){ console.log('button 被 click 了') } })``` 这就是事件委托。它有很多优点。 1. 它可以简化初始化，并节省很多的内存。 2. 它可以监听一些动态元素。 3. 代码可以变得更少，添加移除的时候不需要添加移除程序。 大致的概念就是这样，之后还有对事件委托进行封装或者其他处理，之后我有成果了会继续展示。 
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -267,22 +283,6 @@ CSS 的历史  CSS ，Cascading Style Sheets，层叠样式表。是由李爵士
 a 标签  定义 a 标签是创建通向其他网页、文件、同一页面的其他位置、电子邮件地址或者其他任意URL的超链接。 属性   href 属性，它的取值有以下几种
  网址：  https://google.com 这个是https协议 http://google.com 这个是http协议 //google.com 这个是无协议网址，它会自动选择是用https还是http协议，所以我们推荐用这种写法   路径：  /a/b/c（绝对路径）和 a/b/c（相对路径）。这里有些不一样的地方，因为http-server在哪里打开，它就会把哪里作为根目录。而如果我们是使用双击去打开这个html文件，那是文件路径，在点超链接的时候，我们会根据文件路径的做法找到文件的根目录去，这样就会出错。所以我们要用http-server来进行模拟测试，而不是用双击打开文件的方式去测试html文件。 index.html 和 ./index.html。这是在当前目录下寻找这个文件，两个意思是一样的。   伪协议：  javascript:代码; 这里的代码为空的话，就是一个点击之后不会有任何反应的按钮，用其他任何办法都不能达到同样的效果。 mailto: 邮件地址 写邮件给邮件地址主人 tel:手机号 打电话给这个手机号   id  href=&rdquo;#id&rdquo; 可以定位到页面中这个id的位置      target 属性，是指在哪个窗口打开这个超链接。它的取值分为以下两种：
    内置名字  _blank：在新标签页打开。 _top：在最顶层页面打开。 _parent：在父级页面打开。 _self：默认值，在当前页面打开。   程序员命名  window的name  target=&quot;xxx&rdquo;，如果有xxx这个窗口，就在xxx窗口打开；如果没有，就创建xxx窗口，然后打开。   iframe的name  如果iframe设置了name属性，那么target设置成这个name，就可以在这个iframe里打开窗口了。        以上就是a标签的基本用法了，还有一些就是不怎么常见了，如果碰到可以查MDN。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://lisbeth1128.github.io//posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
-        HTML入门笔记1
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      今天学习了HTML简单的一些入门内容，现在写成博客整理一下。
- HTML 是谁发明的 HTML 全称 HyperText Markup Language，超文本标记语言。是上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·博纳斯-李（Tim Berners-Lee），也就是我们所说的李爵士发明的。 HTML 的起手式 我用的是VSCode，打开VScode，然后创建一个HTML文件，右下角语言如果不是HTML可以改成HTML。然后输入一个!感叹号，再按Tab键，或者回车键，就会出现一大段代码。 这个就是起手式，每个HTML文件都需要有这么一些基本的设置。然后我们来稍微看看这些设置。  &lt;!DOCTYPE html&gt;文档类型 &lt;html lang=&quot;en&quot;&gt;这是html标签。可以把语言改成zh-CN，这样浏览器会知道这个界面主要用的是什么语言。 一般来说&lt;head&gt;和&lt;body&gt;标签不进行缩进 &lt;meta charset=&quot;UTF-8&quot;&gt; 文件的字符编码是utf-8，这个一般写在最前面，方便浏览器知道之后的文字用的是什么字符编码。 content=&quot;width=device-width 禁用缩放，兼容手机端。 content=&quot;ie=edge&quot; 告诉IE，使用的是最新的内核。   常用的章节标签 章节标签有很多，挑一些常用地简单说一下。  h1~h6：标题。h1字体最大，往后越来越小。 section：章节。表示用这个标签扩起来的是一个章节，章节可以嵌套章节。 p：段落。表示用这个标签括起来的是一个段落。 header：头部。可以放一些像导航之类的东西。 footer：脚部。版权声明一般放在这里，&amp;copy;这个就是版权符号©的写法。 main：主要内容。这个标签里包括的是主体内容，像导航、侧边栏，版权等的东西不能放在里面。 aside：旁支内容。这个标签里包括的是与主要内容无关的内容，比如侧边栏之类的东西，一般都放在这里。 div：划分。division，应该是这个词的简写。div可以嵌套div。   全局属性 全局属性就是所有标签都有的属性，有这些：  class：class属性可以让一组标签都有同样的属性。 contenteditable：是一个枚举属性，表示元素是否可以被用户编辑。 hidden：hidden是一个布尔属性，表示元素是否隐藏。 id：只有非常确定的唯一的属性用id，作为新手，能不用尽量不用。因为如果你两个元素用了同一个id，浏览器是不会报错的，你没有办法判断你是否只用在了一个元素上。 style：这是元素的属性，所以他的优先级高于css设置的样式，但是可以被javascript所写的属性覆盖。 tabindex：表示元素是否可以聚焦，并且在什么时候参与聚焦。当它是负数的时候，表示可以被聚焦，但是不能通过键盘访问到；当它是0的时候，表示可以被聚焦，并且可以通过键盘访问到。数值越小，越可以先被访问到。通常给予没有鼠标的用户设置这个属性。 title：标题。这个标签只用在&lt;head&gt;块里。表示文档的标题。   常用的内容标签  ol+li：有序列表。 ul+li：无序列表。 dl+dd+dt：表格。 pre：在这个标签里的内容会原封不动地输出到网页中，空格也会一模一样。 hr：水平分割线。 br：换行符。 a：超链接。当你要在一个网页里插入一个链接，就需要用到这个标签。 em：强调。通常显示是斜体，是一个语气上的强调。 strong：强调。通常显示是加粗，这个和em有所不同，他表示的是他扩起来的内容本身就很重要。    这只是刚刚入门了解的一些HTML的标签，还有很多很多东西还没有学习，以后会慢慢深入，初级阶段就先聊到这里。
     </div>
   </div>
 </div>

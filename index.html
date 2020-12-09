@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2020-12-10T02:28:04+08:00" />
+<meta property="og:updated_time" content="2020-12-10T02:29:43+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="color-inherit dim link">
+            事件委托
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          之前我们学习了DOM的事件模型，了解到了捕获和冒泡。但是并不知道有什么用途。今天我们要讲它的一个用途，就是可以实现事件委托。 试想一下，如果我们需要对一批元素进行相同的处理。我们就不必要为他们每一个都写程序，我们可以只写一个程序，然后将它绑定在我们需要处理的元素的祖先元素上。
+ 假设，我们有100个按钮，我们需要为监听他们，我们不可能写100个绑定时间然后分别绑定在这些按钮上。我们可以在按钮的祖先元素上绑定一个事件，然后对其进行监听即可。  const t = e.target if(t.tagName.toLowerCase() === 'button'){ console.log('button 被点击了') console.log('button data-id 是'+t.dataset.id) } })``` 2. 再比如，我们如果要监听一个目前还不存在的元素，怎么办。那我们只能监听它的祖先，然后在执行的时候看看是不是我要的那个元素。 ```setTimeout(()=&gt;{ const button = document.createElement('button') button.textContent = 'click 1' div1.appendChild(button) }, 1000)``` ```div1.addEventListener('click', (e)=&gt;{ const t = e.target if(t.tagName.toLowerCase() === 'button'){ console.log('button 被 click 了') } })``` 这就是事件委托。它有很多优点。 1. 它可以简化初始化，并节省很多的内存。 2. 它可以监听一些动态元素。 3. 代码可以变得更少，添加移除的时候不需要添加移除程序。 大致的概念就是这样，之后还有对事件委托进行封装或者其他处理，之后我有成果了会继续展示。 
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" class="color-inherit dim link">
             DOM事件模型
             </a>
@@ -174,45 +199,18 @@ jQuery 如何移动元素 我们可以将某个需要的元素放到另外一个
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="color-inherit dim link">
-            JS函数的执行时机
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          今天学习了JS的函数内容。知道每个JS函数都有调用时机。一些简单代码还是比较好理解的，但是如果碰到一些稍微复杂的代码，就需要结合闭包等其他概念来进行理解了。下面看一个例子：
-let i = 0 for(i = 0; i &lt; 6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 这个例子会输出6个6。为什么？ setTimeout()这个函数的意思是过一会儿执行。也就是说，在上面这一段代码里的意思是，过一会儿打印出i的值。但是一共执行了6次，而过一会儿i就变成了6，所以会打印出6个6。但是为什么过一会儿取的是6这个值呢？这就要从如何实现闭包说起了。
-JS 的闭包 JS 实现闭包的时候，是capture variable的。意思就是，当一个闭包引用了外部变量，它就把这个变量名记下来，等到需要用到的时候，用这个变量名，去查这个变量值是多少。
-其他某些语言的闭包 而有一些语言，是另外一种策略，是capture value的。意思就是，当一个闭包引用了外部变量，当这个闭包创建的那一刻，立刻查询那个外部变量的值是多少。把这个值固化下来。那么在那之后，到下一次闭包建立之前，不管这个外部变量变成了多少，都跟这个闭包无关了。
-区别 他们本质上最大的区别，就是这些闭包是否可以通过某一个相同的“变量”来共享状态。capture variable 可以，但是capture value 不行。
-所以，我们上面这段代码，就会输出6个6。那么，怎么让它输出0，1，2，3，4，5呢？
-方法一 for(let i = 0; i &lt; 6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 我们只需要将let声明放到里面，那么输出的就是，0，1，2，3，4，5。原因上面已经解释了。
-既然如此，我们还有没有其他除了用let+for循环以外的方法让我们得到这个结果呢。
-方法二 let i for(i = 0; i&lt;6; i++){ let x = i setTimeout(()=&gt;{ console.log(x) }) } 引入另外一个变量，将i的值赋值给这个变量，之后这个变量值怎么变化就与i之后的变化无关了。
-方法三 let i for(i = 0; i&lt;6; i++){ setTimeout((value)=&gt;{ console.
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+              JS函数的执行时机
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
@@ -229,12 +227,6 @@ JS 的闭包 JS 实现闭包的时候，是capture variable的。意思就是，
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/javascript%E8%AF%9E%E7%94%9F%E8%AE%B0/" class="link black dim">
               JavaScript诞生记
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
-              浅析URL
             </a>
           </h2>
         

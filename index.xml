@@ -6,10 +6,20 @@
     <description>Recent content on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 10 Dec 2020 02:28:04 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 02:29:43 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>事件委托</title>
+      <link>http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
+      <pubDate>Thu, 10 Dec 2020 02:29:43 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</guid>
+      <description>之前我们学习了DOM的事件模型，了解到了捕获和冒泡。但是并不知道有什么用途。今天我们要讲它的一个用途，就是可以实现事件委托。 试想一下，如果我们需要对一批元素进行相同的处理。我们就不必要为他们每一个都写程序，我们可以只写一个程序，然后将它绑定在我们需要处理的元素的祖先元素上。
+ 假设，我们有100个按钮，我们需要为监听他们，我们不可能写100个绑定时间然后分别绑定在这些按钮上。我们可以在按钮的祖先元素上绑定一个事件，然后对其进行监听即可。  const t = e.target if(t.tagName.toLowerCase() === &#39;button&#39;){ console.log(&#39;button 被点击了&#39;) console.log(&#39;button data-id 是&#39;+t.dataset.id) } })``` 2. 再比如，我们如果要监听一个目前还不存在的元素，怎么办。那我们只能监听它的祖先，然后在执行的时候看看是不是我要的那个元素。 ```setTimeout(()=&amp;gt;{ const button = document.createElement(&#39;button&#39;) button.textContent = &#39;click 1&#39; div1.appendChild(button) }, 1000)``` ```div1.addEventListener(&#39;click&#39;, (e)=&amp;gt;{ const t = e.target if(t.tagName.toLowerCase() === &#39;button&#39;){ console.log(&#39;button 被 click 了&#39;) } })``` 这就是事件委托。它有很多优点。 1. 它可以简化初始化，并节省很多的内存。 2. 它可以监听一些动态元素。 3. 代码可以变得更少，添加移除的时候不需要添加移除程序。 大致的概念就是这样，之后还有对事件委托进行封装或者其他处理，之后我有成果了会继续展示。 </description>
+    </item>
     
     <item>
       <title>DOM事件模型</title>

@@ -6,10 +6,23 @@
     <description>Recent content on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 10 Dec 2020 02:29:43 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2021 15:56:54 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅析MVC</title>
+      <link>http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Thu, 07 Jan 2021 15:56:54 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/%E6%B5%85%E6%9E%90mvc/</guid>
+      <description>最近学习了 MVC，不得不说，学得感觉脑袋嗡嗡的，一团浆糊。为了能够比较好的理解，还是决定整理一下关于 MVC 的知识，让自己可以更好的理解 MVC。
+MVC 三个对象 MVC 是一种设计模式。
+ M 是 数据层 Model，是程序需要操作的数据或者信息。  const M = { findAll: &#39;/todos&#39;, findOne: &#39;/todos/{id}&#39;, create: &#39;/todos&#39;, update: &#39;/todos/{id}&#39; destroy : &#39;/todos/{id}&#39; } 所有与数据有关的东西都整合到M里面。
+V 是 视图层 View，是提供给用户的操作界面，是程序的外壳。  const V = { el: null, html: `&amp;lt;div class=&amp;quot;html&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;`, render() {} }; 所有与视图相关的东西都放到 V 里面。
+C是 控制层 Controller，它负责根据用户从&amp;quot;视图层&amp;quot;输入的指令，选取&amp;quot;数据层&amp;quot;中的数据，然后对其进行相应的操作，产生最终结果。  const C = { init() {}, events: { &amp;quot;click #add1&amp;quot;: &amp;quot;add&amp;quot;, &amp;quot;click #minus1&amp;quot;: &amp;quot;minus&amp;quot;, &amp;quot;click #mul2&amp;quot;: &amp;quot;mul&amp;quot;, &amp;quot;click #divide2&amp;quot;: &amp;quot;div&amp;quot; }, add() {}, minus() {}, mul() {}, div() {} } 所有业务逻辑都放到 C 里面。</description>
+    </item>
     
     <item>
       <title>事件委托</title>

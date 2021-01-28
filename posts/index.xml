@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 小墨的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 15 Jan 2021 03:39:28 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jan 2021 03:52:04 +0800</lastBuildDate>
     
 	<atom:link href="http://lisbeth1128.github.io//posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue的数据响应式</title>
+      <link>http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</link>
+      <pubDate>Fri, 29 Jan 2021 03:52:04 +0800</pubDate>
+      
+      <guid>http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</guid>
+      <description>今天学习了 Vue 的数据响应式，有点不太好理解，所以写一篇博客整理一下思绪。 要理解 Vue 的数据响应式，首先我们要理解几个概念。
+什么是响应式 如果一个物体能对外界的刺激做出反应，那么它就是响应式的。
+Vue 的 data 是响应式的 const myData = { n: 0 } new Vue({ data: myData, template: ` &amp;lt;div&amp;gt;{{n}}&amp;lt;/div&amp;gt; ` }).$mount(&amp;quot;#app&amp;quot;); setTimeout(()=&amp;gt;{ myData.n += 10 }, 3000) 我们修改了 myData 的 n，我们在界面中看到 n 响应了我，这就是数据响应式。 Vue 2 通过 Object.defineProperty 来实现数据响应式，那么 Object.defineProperty 怎么用呢？
+Object.defineProperty let data0 = { n: 0 } // 需求一：用 Object.defineProperty 定义 n let data1 = {} Object.defineProperty(data1, &#39;n&#39;, { value: 0 }) console.</description>
+    </item>
     
     <item>
       <title>Vue完整版和运行时版的区别和使用</title>

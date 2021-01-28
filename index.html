@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://lisbeth1128.github.io//" />
-<meta property="og:updated_time" content="2021-01-15T03:39:28+08:00" />
+<meta property="og:updated_time" content="2021-01-29T03:52:04+08:00" />
 <meta itemprop="name" content="小墨的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="小墨的博客"/>
@@ -127,6 +127,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="color-inherit dim link">
+            Vue的数据响应式
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          今天学习了 Vue 的数据响应式，有点不太好理解，所以写一篇博客整理一下思绪。 要理解 Vue 的数据响应式，首先我们要理解几个概念。
+什么是响应式 如果一个物体能对外界的刺激做出反应，那么它就是响应式的。
+Vue 的 data 是响应式的 const myData = { n: 0 } new Vue({ data: myData, template: ` &lt;div&gt;{{n}}&lt;/div&gt; ` }).$mount(&quot;#app&quot;); setTimeout(()=&gt;{ myData.n += 10 }, 3000) 我们修改了 myData 的 n，我们在界面中看到 n 响应了我，这就是数据响应式。 Vue 2 通过 Object.defineProperty 来实现数据响应式，那么 Object.defineProperty 怎么用呢？
+Object.defineProperty let data0 = { n: 0 } // 需求一：用 Object.defineProperty 定义 n let data1 = {} Object.defineProperty(data1, 'n', { value: 0 }) console.
+        </div>
+          <a href="http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://lisbeth1128.github.io//posts/vue%E5%AE%8C%E6%95%B4%E7%89%88%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%89%88%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
             Vue完整版和运行时版的区别和使用
             </a>
@@ -177,37 +204,18 @@ C是 控制层 Controller，它负责根据用户从&quot;视图层&quot;输入�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="color-inherit dim link">
-            事件委托
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          之前我们学习了DOM的事件模型，了解到了捕获和冒泡。但是并不知道有什么用途。今天我们要讲它的一个用途，就是可以实现事件委托。 试想一下，如果我们需要对一批元素进行相同的处理。我们就不必要为他们每一个都写程序，我们可以只写一个程序，然后将它绑定在我们需要处理的元素的祖先元素上。
- 假设，我们有100个按钮，我们需要为监听他们，我们不可能写100个绑定时间然后分别绑定在这些按钮上。我们可以在按钮的祖先元素上绑定一个事件，然后对其进行监听即可。  const t = e.target if(t.tagName.toLowerCase() === 'button'){ console.log('button 被点击了') console.log('button data-id 是'+t.dataset.id) } })``` 2. 再比如，我们如果要监听一个目前还不存在的元素，怎么办。那我们只能监听它的祖先，然后在执行的时候看看是不是我要的那个元素。 ```setTimeout(()=&gt;{ const button = document.createElement('button') button.textContent = 'click 1' div1.appendChild(button) }, 1000)``` ```div1.addEventListener('click', (e)=&gt;{ const t = e.target if(t.tagName.toLowerCase() === 'button'){ console.log('button 被 click 了') } })``` 这就是事件委托。它有很多优点。 1. 它可以简化初始化，并节省很多的内存。 2. 它可以监听一些动态元素。 3. 代码可以变得更少，添加移除的时候不需要添加移除程序。 大致的概念就是这样，之后还有对事件委托进行封装或者其他处理，之后我有成果了会继续展示。 
-        </div>
-          <a href="http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://lisbeth1128.github.io//posts/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="link black dim">
+              事件委托
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/dom%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" class="link black dim">
@@ -224,12 +232,6 @@ C是 控制层 Controller，它负责根据用户从&quot;视图层&quot;输入�
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://lisbeth1128.github.io//posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
               JS函数的执行时机
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://lisbeth1128.github.io//posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
-              JS对象基本用法
             </a>
           </h2>
         

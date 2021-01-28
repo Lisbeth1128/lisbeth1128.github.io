@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Vue的数据响应式 | 小墨的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Vue的数据响应式" />
+<meta property="og:description" content="今天学习了 Vue 的数据响应式，有点不太好理解，所以写一篇博客整理一下思绪。 要理解 Vue 的数据响应式，首先我们要理解几个概念。
+什么是响应式 如果一个物体能对外界的刺激做出反应，那么它就是响应式的。
+Vue 的 data 是响应式的 const myData = { n: 0 } new Vue({ data: myData, template: ` &lt;div&gt;{{n}}&lt;/div&gt; ` }).$mount(&quot;#app&quot;); setTimeout(()=&gt;{ myData.n &#43;= 10 }, 3000) 我们修改了 myData 的 n，我们在界面中看到 n 响应了我，这就是数据响应式。 Vue 2 通过 Object.defineProperty 来实现数据响应式，那么 Object.defineProperty 怎么用呢？
+Object.defineProperty let data0 = { n: 0 } // 需求一：用 Object.defineProperty 定义 n let data1 = {} Object.defineProperty(data1, &#39;n&#39;, { value: 0 }) console." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" />
+<meta property="article:published_time" content="2021-01-29T03:52:04+08:00" />
+<meta property="article:modified_time" content="2021-01-29T03:52:04+08:00" />
+<meta itemprop="name" content="Vue的数据响应式">
+<meta itemprop="description" content="今天学习了 Vue 的数据响应式，有点不太好理解，所以写一篇博客整理一下思绪。 要理解 Vue 的数据响应式，首先我们要理解几个概念。
+什么是响应式 如果一个物体能对外界的刺激做出反应，那么它就是响应式的。
+Vue 的 data 是响应式的 const myData = { n: 0 } new Vue({ data: myData, template: ` &lt;div&gt;{{n}}&lt;/div&gt; ` }).$mount(&quot;#app&quot;); setTimeout(()=&gt;{ myData.n &#43;= 10 }, 3000) 我们修改了 myData 的 n，我们在界面中看到 n 响应了我，这就是数据响应式。 Vue 2 通过 Object.defineProperty 来实现数据响应式，那么 Object.defineProperty 怎么用呢？
+Object.defineProperty let data0 = { n: 0 } // 需求一：用 Object.defineProperty 定义 n let data1 = {} Object.defineProperty(data1, &#39;n&#39;, { value: 0 }) console.">
+<meta itemprop="datePublished" content="2021-01-29T03:52:04&#43;08:00" />
+<meta itemprop="dateModified" content="2021-01-29T03:52:04&#43;08:00" />
+<meta itemprop="wordCount" content="325">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue的数据响应式"/>
+<meta name="twitter:description" content="今天学习了 Vue 的数据响应式，有点不太好理解，所以写一篇博客整理一下思绪。 要理解 Vue 的数据响应式，首先我们要理解几个概念。
+什么是响应式 如果一个物体能对外界的刺激做出反应，那么它就是响应式的。
+Vue 的 data 是响应式的 const myData = { n: 0 } new Vue({ data: myData, template: ` &lt;div&gt;{{n}}&lt;/div&gt; ` }).$mount(&quot;#app&quot;); setTimeout(()=&gt;{ myData.n &#43;= 10 }, 3000) 我们修改了 myData 的 n，我们在界面中看到 n 响应了我，这就是数据响应式。 Vue 2 通过 Object.defineProperty 来实现数据响应式，那么 Object.defineProperty 怎么用呢？
+Object.defineProperty let data0 = { n: 0 } // 需求一：用 Object.defineProperty 定义 n let data1 = {} Object.defineProperty(data1, &#39;n&#39;, { value: 0 }) console."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="//" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小墨的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/&amp;text=Vue%e7%9a%84%e6%95%b0%e6%8d%ae%e5%93%8d%e5%ba%94%e5%bc%8f" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://lisbeth1128.github.io//posts/vue%E7%9A%84%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/&amp;title=Vue%e7%9a%84%e6%95%b0%e6%8d%ae%e5%93%8d%e5%ba%94%e5%bc%8f" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Vue的数据响应式</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-01-29T03:52:04&#43;08:00">January 29, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>今天学习了 Vue 的数据响应式，有点不太好理解，所以写一篇博客整理一下思绪。
+要理解 Vue 的数据响应式，首先我们要理解几个概念。</p>
+<h3 id="什么是响应式">什么是响应式</h3>
+<p>如果一个物体能对外界的刺激做出反应，那么它就是响应式的。</p>
+<h3 id="vue-的-data-是响应式的">Vue 的 data 是响应式的</h3>
+<pre><code>const myData = {
+  n: 0
+}
+
+new Vue({
+  data: myData,
+  template: `
+    &lt;div&gt;{{n}}&lt;/div&gt;
+  `
+}).$mount(&quot;#app&quot;);
+
+setTimeout(()=&gt;{
+  myData.n += 10
+}, 3000)
+</code></pre><p>我们修改了 myData 的 n，我们在界面中看到 n 响应了我，这就是数据响应式。
+Vue 2 通过 Object.defineProperty 来实现数据响应式，那么 Object.defineProperty 怎么用呢？</p>
+<h3 id="objectdefineproperty">Object.defineProperty</h3>
+<pre><code>let data0 = {
+  n: 0
+}
+
+// 需求一：用 Object.defineProperty 定义 n
+let data1 = {}
+
+Object.defineProperty(data1, 'n', {
+  value: 0
+})
+
+console.log(`需求一：${data1.n}`)
+</code></pre><pre><code>let data2 = {}
+
+data2._n = 0 // _n 用来偷偷存储 n 的值
+
+Object.defineProperty(data2, 'n', {
+  get(){
+    return this._n
+  },
+  set(value){
+    if(value &lt; 0) return
+    this._n = value
+  }
+})
+console.log(`需求二：${data2.n}`)
+data2.n = -1
+console.log(`需求二：${data2.n} 设置为 -1 失败`)
+data2.n = 1
+console.log(`需求二：${data2.n} 设置为 1 成功`)
+</code></pre><p>Object.defineProperty 的用处：</p>
+<ol>
+<li>可以给对象添加属性 value</li>
+<li>可以给对象添加 getter / setter</li>
+<li>getter / setter 用于对属性的读写进行监控</li>
+</ol>
+<p>我们看看上面的代码，我们在思考，怎么样才能让我们可以监控对 n 的修改，而且不要让外部特意操作而影响到我们，我们可以使用代理。</p>
+<h3 id="啥是代理">啥是代理</h3>
+<pre><code>let myData5 = {n:0}
+let data5 = proxy2({ data:myData5 }) // 括号里是匿名对象，无法访问
+
+function proxy2({data}/* 解构赋值 */){
+  // 这里的 'n' 写死了，理论上应该遍历 data 的所有 key，这里做了简化
+  let value = data.n
+  Object.defineProperty(data, 'n', {
+    get(){
+      return value
+    },
+    set(newValue){
+      if(newValue&lt;0)return
+      value = newValue
+    }
+  })
+  // 就加了上面几句，这几句话会监听 data
+
+  const obj = {}
+  Object.defineProperty(obj, 'n', {
+    get(){
+      return data.n
+    },
+    set(value){
+      if(value&lt;0)return
+      data.n = value
+    }
+  })
+  
+  return obj // obj 就是代理
+}
+
+// data3 就是 obj
+console.log(`需求五：${data5.n}`)
+myData5.n = -1
+console.log(`需求五：${data5.n}，设置为 -1 失败了`)
+myData5.n = 1
+console.log(`需求五：${data5.n}，设置为 1 成功了`)
+</code></pre><p>对 myData 的属性读写，全权由另一个对象 vm 负责，那么 vm 就是 myData 的代理。我们不用 myData.n 来操作而是用 vm.n 来操作，这就是代理。
+我们看上面的代码，就看到一个特别熟悉的结构。
+<code>vm = new Vue({data:myData})</code>，那这会让我们发生什么呢。</p>
+<h3 id="vm--new-vuedatamydata">vm = new Vue({data:myData})</h3>
+<p>所以这句话到底会产生什么结果？</p>
+<ol>
+<li>会让 vm 称为 myData 的代理</li>
+<li>会对 myData 的所有属性进行监控</li>
+<li>只要属性变化了，我们就可以进行重新的渲染了</li>
+</ol>
+<p>这就是 Vue 的数据响应式的概念。但是其中似乎是存在了一些 bug，比如。</p>
+<h3 id="vue-只会检查第一层属性">Vue 只会检查第一层属性</h3>
+<pre><code>new Vue({
+  data: {
+    obj: {
+      a: 0 // obj.a 会被 Vue 监听 &amp; 代理
+    }
+  },
+  template: `
+    &lt;div&gt;
+      {{obj.b}}
+      &lt;button @click=&quot;setB&quot;&gt;set b&lt;/button&gt;
+    &lt;/div&gt;
+  `,
+  methods: {
+    setB() {
+      this.obj.b = 1; //请问，页面中会显示 1 吗？
+    }
+  }
+}).$mount(&quot;#app&quot;);
+</code></pre><p>这里的 b 并不会被监听，因为 Vue 不会监听一开始不存在的 obj.b。那我们有什么办法呢？</p>
+<ol>
+<li>先把所有的 key 都声明好，然后后面添加属性</li>
+<li>使用 Vue.set 或者 this.$set</li>
+</ol>
+<p>对象中使用 set 可以新增 key，创建代理和监听，更新 UI。但是数组怎么办呢？</p>
+<h3 id="data-中有数组怎么办">data 中有数组怎么办？</h3>
+<p>数组的长度是可以一直增加的，数组的 key 就是数组的下标，我们不可能把下标全都声明出来，难道我们要每次都使用 set 吗？
+Vue 作者想到了一个办法，就是篡改数组的 API。作者添加了7个变异方法：push()、pop()、shift()、unshift()、splice()、sort()、reverse()，只要使用这些方法就会自动处理对数组的代理和监听并且更新 UI。</p>
+<p>扯得稍微有一些远，这大概就是 Vue 的数据响应式的概念。暂时只能理解到这里，如果还有其他的想说的，会在以后的博客中继续说明。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://lisbeth1128.github.io//" >
+    &copy;  小墨的博客 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
